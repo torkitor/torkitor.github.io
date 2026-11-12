@@ -2,20 +2,14 @@
 import json
 import re
 from collections import Counter
-from datetime import date
 from html import escape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 DATA = json.loads((ROOT / 'data/publications.json').read_text(encoding='utf-8'))
 REVIEWS = json.loads((ROOT / 'data/peer-review.json').read_text(encoding='utf-8'))
-REVIEW_TOTAL = sum(journal['manuscripts'] for journal in REVIEWS['journals'])
-REVIEW_JOURNALS = len(REVIEWS['journals'])
-REVIEW_DATE = date.fromisoformat(max(journal['updated'] for journal in REVIEWS['journals']))
 WORKS = sorted(DATA['works'], key=lambda w: (w['year'], w['sort_date'], w['doi']), reverse=True)
 YEAR = int(DATA['updated'][:4])
-UPDATED = date.fromisoformat(DATA['updated'])
-UPDATED_LABEL = f'{UPDATED.day} {UPDATED:%B %Y}'
 COUNTS = Counter(w['year'] for w in WORKS)
 FIRST = sum(w['first_author'] for w in WORKS)
 SOLE = sum(w['sole_author'] for w in WORKS)
@@ -33,7 +27,7 @@ def page(title, description, body, active):
     navigation = ''.join(
         f'<a href="{prefix}{target}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>'
         for label, target in [('Home', './'), ('Publications', 'publications/'), ('Software', 'software/'), ('About', 'about/')])
-    script = '<script src="../assets/publications.js?v=20261112-r2" defer></script>' if active == 'Publications' else ''
+    script = '<script src="../assets/publications.js?v=20261112-r3" defer></script>' if active == 'Publications' else '<link rel="stylesheet" href="assets/knowledge-cloud.css?v=20261112-r3"><script src="assets/knowledge-cloud.js?v=20261112-r3" defer></script>'
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -46,9 +40,9 @@ def page(title, description, body, active):
   <meta property="og:description" content="{e(description)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://torkitor.github.io/{path}">
-  <meta property="og:image" content="https://torkitor.github.io/assets/portrait.jpg?v=20261112-r2">
+  <meta property="og:image" content="https://torkitor.github.io/assets/portrait.jpg?v=20261112-r3">
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261112-r2">
+  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261112-r3">
 {script}
 </head>
 <body>
@@ -119,7 +113,6 @@ def catalogue():
       <div class="results-row"><span id="result-count" role="status" aria-live="polite" aria-atomic="true">{len(WORKS)} publications</span><span>Newest first · name in bold</span></div>
       <p class="no-results" id="no-results" hidden>No publications match these filters. Try a broader search or reset the filters.</p>
       {''.join(groups)}
-      <section aria-labelledby="record-note"><h2 id="record-note">About this record</h2><p class="source-note">Reconciled with publisher records, PubMed, Crossref, ORCID and LinkedIn on {UPDATED_LABEL}. Journal articles, letters, perspectives, opinion pieces, reviews and case reports are identified separately. Translated editions count as one work; year groups use the earliest evidenced publication year, including online-first publication. First authorship means first position in the author list; sole-author works are included in that total. Conference abstracts, repository deposits and unpublished manuscripts are outside these counts.</p></section>
     '''
 
 
@@ -133,60 +126,63 @@ def home():
         work = next(w for w in WORKS if w['doi'] == doi)
         entries.append(f'<article class="entry"><p class="eyebrow">{e(label)} · {work["year"]}</p><h3><a href="https://doi.org/{e(doi)}">{e(work["title"].rstrip("."))}</a></h3><p class="meta">{e(work["journal"])} · {"Sole author" if work["sole_author"] else "First author"}</p></article>')
     metrics = ''.join(f'<div class="metric" data-metric="{key}"><strong>{value}</strong><span>{label}</span><small>{note}</small></div>' for key, value, label, note in [
-        ('publications', len(WORKS), 'Journal publications', f'{min(COUNTS)}–{max(COUNTS)}'),
-        ('recent', COUNTS[YEAR], f'Published in {YEAR}', f'Through {UPDATED.day} {UPDATED:%B}'),
+        ('publications', len(WORKS), 'Journal publications', ''),
         ('first', FIRST, 'First-author works', 'Including sole authorship'),
         ('sole', SOLE, 'Sole-author works', '')])
-    additional = ', '.join(e(name) for name in REVIEWS['additional_journals'][:-1]) + ' and ' + e(REVIEWS['additional_journals'][-1])
     return f'''
       <div class="hero">
         <div class="hero-copy">
           <p class="eyebrow">MD, MSc · PhD candidate</p>
           <h1>Clemente<br>García-Hidalgo</h1>
-          <p class="subtitle">Physician &amp; bioinformatician.</p>
-          <p class="lead">I work on quantitative MRI of brain tumours and the methods used to evaluate medical AI.</p>
-          <p class="affiliation">Radiology resident at Hospital Morales Meseguer, Murcia.<br>Doctoral research at the University of Murcia and IDIBELL–Bellvitge. MSc in Bioinformatics, UNIR.</p>
+          <p class="subtitle">Radiology, Medical Imaging and AI</p>
+          <p class="affiliation">Radiology resident at Hospital Morales Meseguer, Murcia.<br>Doctoral research at the University of Murcia and IDIBELL–Bellvitge. MSc in Bioinformatics.</p>
           <div class="hero-actions"><a class="button" href="publications/">Publications <span aria-hidden="true">↗</span></a><a href="about/">Academic profile <span aria-hidden="true">↗</span></a></div>
           <div class="links-row" aria-label="Professional profiles and contact"><a href="https://orcid.org/0009-0001-6672-2714">ORCID</a><a href="https://github.com/torkitor">GitHub</a><a href="https://www.linkedin.com/in/clementegarciahidalgo/">LinkedIn</a><a href="mailto:clemente292@gmail.com">Email</a></div>
         </div>
-        <figure><img class="portrait" src="assets/portrait.jpg?v=20261112-r2" width="1280" height="853" fetchpriority="high" alt="Clemente García-Hidalgo"><figcaption>Murcia / Barcelona, Spain</figcaption></figure>
+        <figure><img class="portrait" src="assets/portrait.jpg?v=20261112-r3" width="1280" height="853" fetchpriority="high" alt="Clemente García-Hidalgo"></figure>
       </div>
+
       <div class="metrics" aria-label="Publication record">{metrics}</div>
-      <p class="metrics-note">Journal publications through {UPDATED_LABEL}, including letters and perspectives. <a href="publications/#record-note">Counting method</a></p>
-      <section aria-labelledby="selected-heading"><div class="section-heading"><h2 id="selected-heading">Selected publications</h2><a href="publications/">All {len(WORKS)} publications →</a></div>{''.join(entries)}</section>
-      <section class="review-feature" id="peer-review" aria-labelledby="review-heading">
-        <div class="review-number"><strong data-review-total>{REVIEW_TOTAL}</strong><small>manuscript reviews</small></div>
-        <div class="review-copy"><h2 id="review-heading">Peer review</h2><p>Recorded across <span data-review-journals>{REVIEW_JOURNALS}</span> Springer Nature journals, including <em>BMC Medical Imaging</em>, <em>Scientific Reports</em> and <em>npj Digital Medicine</em>.</p><p>I also review for {additional}.</p><a class="text-link" href="about/#peer-review">View the journal record ↗</a><p class="source-note">Springer Nature reviewer record · updates through {REVIEW_DATE.day} {REVIEW_DATE:%B %Y}. The three additional journals are outside this count.</p></div>
+      {highlights()}
+      {peer_review(compact=True)}
+      <section id="knowledge-map" aria-labelledby="knowledge-heading">
+        <div class="section-heading"><h2 id="knowledge-heading">Research fields</h2></div>
+        <div class="knowledge-stage" hidden><canvas id="knowledge-canvas" tabindex="0" role="img" aria-label="Interactive three-dimensional map of six research fields" aria-describedby="knowledge-help"></canvas><div class="knowledge-toolbar"><p id="knowledge-help">Drag horizontally to rotate. Arrow keys also move the view.</p><button id="knowledge-pause" type="button">Pause rotation</button></div></div>
+        <div class="knowledge-fields" role="group" aria-label="Choose a research field" hidden><button type="button" data-field="mri">Quantitative MRI</button><button type="button" data-field="oncology">Neuro-oncology</button><button type="button" data-field="radiomics">Radiomics</button><button type="button" data-field="ai">Medical AI</button><button type="button" data-field="statistics">Biostatistics</button><button type="button" data-field="software">Research software</button></div>
+        <div class="knowledge-selection" hidden><div id="knowledge-detail" aria-live="polite" aria-atomic="true"><h3>Quantitative MRI</h3><p>Perfusion imaging and the interpretation of vascular and metabolic biomarkers in brain tumours.</p></div><a id="knowledge-link" href="publications/?topic=Neuroimaging">Explore related publications</a></div>
+        <div class="knowledge-fallback"><p>My work connects quantitative MRI and neuro-oncology with radiomics, medical AI, biostatistics and research software.</p><div class="links-row"><a href="publications/?topic=Neuroimaging">MRI &amp; neuro-oncology</a><a href="publications/?topic=Radiomics%20%26%20methods">Radiomics &amp; biostatistics</a><a href="publications/?topic=Medical%20AI">Medical AI</a><a href="software/">Research software</a></div></div>
       </section>
-      <section aria-labelledby="research-heading"><h2 id="research-heading">Research</h2><div class="research-list">
-        <article><p class="research-topic-label">Neuroimaging</p><div><h3>Brain tumour imaging</h3><p>DSC perfusion MRI, vascular and metabolic measurements, and exploratory radiogenomics. My doctoral work examines imaging biomarkers in gliomas and other adult brain tumours.</p></div></article>
-        <article><p class="research-topic-label">Methods</p><div><h3>How analysis changes the evidence</h3><p>Analytical leakage, feature selection, model multiplicity, synthetic data and foundation-model representations. I study how these choices affect reported performance and biological interpretation.</p></div></article>
-        <article><p class="research-topic-label">Software &amp; education</p><div><h3>Tools, reporting and assessment</h3><p>Image-processing checks, radiograph de-identification, clinical software verification and the evaluation of language models in medical examinations.</p><a class="text-link" href="software/">Public software ↗</a></div></article>
-      </div></section>
-      <div class="recognition-strip" aria-label="Selected recognition"><article><strong><a href="https://idi.gencat.cat/ca/actualitat/2026/esnr-premia-recerca-tumors-cerebrals">ESNR Scientific Award</a></strong><span>European Society of Neuroradiology · 2026</span></article><article><strong><a href="https://journals.myesr.org/eur-radiol/news/new-year-new-fellows-welcome-the-recipients-of-yves-menu-review-fellowships-2026/">Yves Menu Review Fellow</a></strong><span>European Radiology · 2026</span></article><article><strong><a href="https://radiologyai.substack.com/p/welcome-to-our-newest-trainee-editorial">Trainee Editorial Board</a></strong><span>Radiology: Artificial Intelligence · 2026–2028</span></article></div>
-      <section aria-labelledby="news-heading"><h2 id="news-heading">Recent highlights</h2><ul class="news"><li><time datetime="2026-10">Oct 2026</time><span>IDI highlights our <a href="https://idi.gencat.cat/ca/actualitat/2026/esnr-premia-recerca-tumors-cerebrals">ESNR Scientific Award 2026</a> for work on DSC perfusion biomarkers in adult brain tumours.</span></li><li><time datetime="2026-10-29">29 Oct 2026</time><span>New in <a href="https://mededu.jmir.org/2026/1/e106199">JMIR Medical Education</a>: construct validity of frontier language models across four Spanish health professions examinations.</span></li><li><time datetime="2026">2026</time><span>Winner of the <a href="https://iabiomed.org/hackathon-2026/">IABiomed Treelogic challenge</a> on visual de-identification of medical images. <a href="software/">Explore DeID-Rx →</a></span></li><li><time datetime="2026-01">Jan 2026</time><span>Began serving as <a href="https://cbseram.com/2026/01/30/editorial-enero-2026/">General Coordinator of Club Bibliográfico SERAM</a>.</span></li></ul></section>
+      <section aria-labelledby="selected-heading"><div class="section-heading"><h2 id="selected-heading">Selected publications</h2><a href="publications/">All {len(WORKS)} publications →</a></div>{''.join(entries)}</section>
       <section class="contact" aria-labelledby="contact-heading"><h2 id="contact-heading">Contact</h2><p><a href="mailto:clemente292@gmail.com">clemente292@gmail.com</a></p><p>For research collaborations and scientific correspondence.</p></section>
     '''
 
 
-def peer_review():
-    rows = []
-    for journal in sorted(REVIEWS['journals'], key=lambda j: (-j['manuscripts'], j['name'].lower())):
-        stamp = date.fromisoformat(journal['updated'])
-        rows.append(f'<tr data-review-journal="{e(journal["name"])}"><th scope="row">{e(journal["name"])}</th><td class="review-count">{journal["manuscripts"]}</td><td><time datetime="{stamp.isoformat()}">{stamp.day} {stamp:%b %Y}</time></td></tr>')
-    additional = ', '.join(f'<em>{e(name)}</em>' for name in REVIEWS['additional_journals'])
-    return f'''<!-- PEER REVIEW START -->
-      <section id="peer-review" aria-labelledby="peer-review-heading">
-        <h2 id="peer-review-heading">Peer review</h2>
-        <p class="review-summary"><strong data-review-total>{REVIEW_TOTAL}</strong> manuscript reviews recorded across <span data-review-journals>{REVIEW_JOURNALS}</span> Springer Nature journals.</p>
-        <p>My reviewing activity spans medical imaging, artificial intelligence, biomedical informatics and research methodology.</p>
-        <p><strong>Additional reviewing:</strong> {additional}. These journals are not included in the total above.</p>
-        <details class="archive"><summary>Journal-by-journal record · {REVIEW_JOURNALS} journals</summary>
-          <div class="review-table-wrap"><table class="review-table"><caption>Springer Nature reviewer record · manuscript counts</caption><thead><tr><th scope="col">Journal</th><th scope="col">Count</th><th scope="col">Record updated</th></tr></thead><tbody>{''.join(rows)}</tbody></table></div>
-        </details>
-        <p class="source-note">Counts transcribed from my Springer Nature reviewer dashboard. Journal records carry individual update dates, most recently {REVIEW_DATE.day} {REVIEW_DATE:%B %Y}.</p>
-      </section>
-      <!-- PEER REVIEW END -->'''
+def highlights():
+    data = json.loads((ROOT / 'data/highlights.json').read_text(encoding='utf-8'))
+    features = []
+    for item in data['features']:
+        photo = ''
+        if item.get('image'):
+            photo = f'<figure><img src="{e(item["image"])}" width="{item["width"]}" height="{item["height"]}" loading="lazy" alt="{e(item["alt"])}"><figcaption>{e(item["credit"])}</figcaption></figure>'
+        secondary = f'<a class="text-link" href="{e(item["secondary_url"])}">{e(item["secondary_label"])} ↗</a>' if item.get('secondary_url') else ''
+        features.append(f'<article class="press-feature">{photo}<p class="eyebrow">{e(item["label"])}</p><h3><a href="{e(item["url"])}">{e(item["title"])}</a></h3><p>{e(item["text"])}</p><p class="meta">{e(item["source"])} · {e(item["date"])}</p><div class="press-links"><a class="text-link" href="{e(item["url"])}">Read the coverage ↗</a>{secondary}</div></article>')
+    awards = ''.join(f'<li><h3><a href="{e(item["url"])}">{e(item["title"])}</a></h3><p>{e(item["detail"])}</p></li>' for item in data['recognition'])
+    return f'''<section id="awards-news" aria-labelledby="awards-news-heading"><div class="section-heading"><h2 id="awards-news-heading">Awards &amp; in the news</h2><a href="about/#recognition">Full recognition history ↗</a></div><div class="press-grid">{''.join(features)}</div><ul class="award-list">{awards}</ul></section>'''
+
+
+def peer_review(compact=False):
+    entries = []
+    for journal in REVIEWS['journals']:
+        if journal['featured']:
+            name = f'<a href="{e(journal["url"])}">{e(journal["name"])}</a>' if journal.get('url') else e(journal['name'])
+            entries.append(f'<article data-review-journal="{e(journal["name"])}"><h3>{name}</h3><p class="journal-role">{e(journal["role"])}</p></article>')
+    others = '<a class="text-link" href="about/#peer-review">More editorial and reviewing service ↗</a>' if compact else ''
+    if not compact:
+        names = ''.join(f'<li data-review-journal="{e(j["name"])}">{e(j["name"])}</li>' for j in REVIEWS['journals'] if not j['featured'])
+        others = f'<details class="archive"><summary>Other journals reviewed</summary><ul class="journal-list">{names}</ul></details>'
+    section_class = 'editorial-feature' if compact else 'editorial-profile'
+    content = f'''<section class="{section_class}" id="peer-review" aria-labelledby="peer-review-heading"><h2 id="peer-review-heading">Editorial work &amp; peer review</h2><div class="journal-grid">{''.join(entries)}</div>{others}</section>'''
+    return content if compact else '<!-- PEER REVIEW START -->\n      ' + content + '\n      <!-- PEER REVIEW END -->'
 
 
 def bibtex_value(value):
@@ -216,8 +212,8 @@ if __name__ == '__main__':
     before, remaining = about.split(start, 1)
     _, after = remaining.split(end, 1)
     about_path.write_text(before + peer_review() + after, encoding='utf-8')
-    (ROOT / 'index.html').write_text(page('Neuroimaging & medical AI',
-        f'Clemente García-Hidalgo, MD, MSc. Physician and researcher in neuroimaging, machine learning and biostatistics. {len(WORKS)} journal publications; {FIRST} first-author works.', home(), 'Home'), encoding='utf-8')
+    (ROOT / 'index.html').write_text(page('Radiology, Medical Imaging and AI',
+        f'Clemente García-Hidalgo, MD, MSc. Radiology, medical imaging and AI. {len(WORKS)} journal publications; {FIRST} first-author works.', home(), 'Home'), encoding='utf-8')
     (ROOT / 'publications/index.html').write_text(page('Publications',
         f'{len(WORKS)} journal publications by Clemente García-Hidalgo, including {FIRST} first-author and {SOLE} sole-author works. Search the complete bibliography and download BibTeX.', catalogue(), 'Publications'), encoding='utf-8')
     (ROOT / 'publications/publications.bib').write_text(bibliography(), encoding='utf-8')

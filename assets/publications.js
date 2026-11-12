@@ -26,6 +26,11 @@ function filterPublications() {
   document.querySelector('#no-results').hidden = count !== 0;
 }
 
+const initialFilters = new URLSearchParams(window.location.search);
+const initialTopic = initialFilters.get('topic');
+if ([...form.elements.topic.options].some(option => option.value === initialTopic)) {
+  form.elements.topic.value = initialTopic;
+}
 form.hidden = false;
 form.addEventListener('input', filterPublications);
 form.addEventListener('change', filterPublications);

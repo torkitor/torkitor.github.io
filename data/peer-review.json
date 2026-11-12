@@ -1,156 +1,203 @@
 {
   "updated": "2026-11-12",
-  "source": "Springer Nature reviewer dashboard, supplied by the author",
   "journals": [
     {
-      "name": "Discover Computing",
-      "manuscripts": 2,
-      "updated": "2026-11-09"
+      "name": "European Radiology",
+      "role": "Yves Menu Review Fellow · 2026",
+      "url": "https://journals.myesr.org/eur-radiol/news/new-year-new-fellows-welcome-the-recipients-of-yves-menu-review-fellowships-2026/",
+      "featured": true
     },
     {
-      "name": "BMC Medical Informatics and Decision Making",
-      "manuscripts": 6,
-      "updated": "2026-11-09"
+      "name": "Radiology: Artificial Intelligence",
+      "role": "Trainee Editorial Board · 2026–2028",
+      "url": "https://radiologyai.substack.com/p/welcome-to-our-newest-trainee-editorial",
+      "featured": true
     },
     {
-      "name": "International Journal of Computational Intelligence Systems",
-      "manuscripts": 2,
-      "updated": "2026-11-09"
+      "name": "European Radiology Experimental",
+      "role": "Peer reviewer",
+      "url": "https://link.springer.com/journal/41747",
+      "featured": true
     },
     {
-      "name": "BMC Women's Health",
-      "manuscripts": 1,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "Discover Artificial Intelligence",
-      "manuscripts": 9,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "Discover Public Health",
-      "manuscripts": 1,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "BMC Medical Imaging",
-      "manuscripts": 44,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "Discover Informatics",
-      "manuscripts": 1,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "Abdominal Radiology",
-      "manuscripts": 2,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "BMC Pediatrics",
-      "manuscripts": 1,
-      "updated": "2026-11-09"
-    },
-    {
-      "name": "Journal of King Saud University Computer and Information Sciences",
-      "manuscripts": 1,
-      "updated": "2026-11-03"
-    },
-    {
-      "name": "Discover Sensors",
-      "manuscripts": 1,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Scientific Reports",
-      "manuscripts": 20,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Physical and Engineering Sciences in Medicine",
-      "manuscripts": 1,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "International Journal of Data Science and Analytics",
-      "manuscripts": 5,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Discover Oncology",
-      "manuscripts": 1,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "BMC Medical Research Methodology",
-      "manuscripts": 4,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Discover Computer Vision",
-      "manuscripts": 1,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Discover Applied Sciences",
-      "manuscripts": 5,
-      "updated": "2026-11-02"
-    },
-    {
-      "name": "Machine Vision and Applications",
-      "manuscripts": 1,
-      "updated": "2026-10-20"
-    },
-    {
-      "name": "International Journal of Machine Learning and Cybernetics",
-      "manuscripts": 1,
-      "updated": "2026-10-17"
-    },
-    {
-      "name": "BMC Bioinformatics",
-      "manuscripts": 1,
-      "updated": "2026-10-11"
+      "name": "Insights into Imaging",
+      "role": "Peer reviewer",
+      "url": "https://link.springer.com/journal/13244",
+      "featured": true
     },
     {
       "name": "npj Digital Medicine",
-      "manuscripts": 4,
-      "updated": "2026-10-11"
+      "role": "Peer reviewer",
+      "url": "https://www.nature.com/npjdigitalmed/",
+      "featured": true
+    },
+    {
+      "name": "BMC Medical Imaging",
+      "role": "Peer reviewer",
+      "url": "https://link.springer.com/journal/12880",
+      "featured": true
+    },
+    {
+      "name": "JMIR",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Computing",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "BMC Medical Informatics and Decision Making",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "International Journal of Computational Intelligence Systems",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "BMC Women's Health",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Artificial Intelligence",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Public Health",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Informatics",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Abdominal Radiology",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "BMC Pediatrics",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Journal of King Saud University Computer and Information Sciences",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Sensors",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Physical and Engineering Sciences in Medicine",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "International Journal of Data Science and Analytics",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Oncology",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "BMC Medical Research Methodology",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Computer Vision",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Discover Applied Sciences",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "Machine Vision and Applications",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "International Journal of Machine Learning and Cybernetics",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
+    },
+    {
+      "name": "BMC Bioinformatics",
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "BMC Medical Education",
-      "manuscripts": 7,
-      "updated": "2026-10-11"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "Humanities and Social Sciences Communications",
-      "manuscripts": 1,
-      "updated": "2026-09-30"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "Pediatric Radiology",
-      "manuscripts": 1,
-      "updated": "2026-09-16"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "Journal of Ovarian Research",
-      "manuscripts": 1,
-      "updated": "2026-09-14"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "Signal, Image and Video Processing",
-      "manuscripts": 1,
-      "updated": "2026-08-05"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     },
     {
       "name": "International Journal of Colorectal Disease",
-      "manuscripts": 1,
-      "updated": "2026-08-04"
+      "role": "Peer reviewer",
+      "url": null,
+      "featured": false
     }
-  ],
-  "additional_journals": [
-    "JMIR",
-    "Insights into Imaging",
-    "European Radiology Experimental"
   ]
 }

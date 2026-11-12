@@ -1,0 +1,50 @@
+{
+  "features": [
+    {
+      "label": "ESNR Scientific Award · 2026",
+      "title": "Brain tumour research recognised by the ESNR",
+      "text": "La Vanguardia reports on the ESNR award for our research into DSC perfusion biomarkers in adult brain tumours, developed with the Bellvitge and IDIBELL team.",
+      "source": "La Vanguardia / El Llobregat",
+      "url": "https://www.lavanguardia.com/elllobregat/sociedad/20261101/11673413/investigacion-dirigida-bellvitge-recibe-premio-europeo-nuevos-biomarcadores-tumores-cerebrales.html",
+      "date": "1 November 2026",
+      "secondary_url": "https://idi.gencat.cat/ca/actualitat/2026/esnr-premia-recerca-tumors-cerebrals",
+      "secondary_label": "IDI institutional announcement"
+    },
+    {
+      "label": "Interview · Colegio de Médicos de Murcia",
+      "title": "Clinical training, research and a prize-winning case",
+      "text": "An interview about my radiology training and doctoral research, following the second prize in the college's clinical case competition.",
+      "source": "Colegio de Médicos de la Región de Murcia",
+      "url": "https://commurcia.es/noticia?id=2235",
+      "date": "18 May 2026",
+      "image": "assets/news/commurcia-interview.jpg",
+      "width": 4134,
+      "height": 3031,
+      "alt": "Clemente García-Hidalgo in the interview published by the Colegio de Médicos de Murcia",
+      "credit": "Photograph: Colegio de Médicos de la Región de Murcia",
+      "image_source": "https://commurcia.es/Z_data/publicaciones/_dsc6266-1_2235.jpg"
+    }
+  ],
+  "recognition": [
+    {
+      "title": "Treelogic challenge winner",
+      "detail": "IABiomed · visual de-identification of medical images · 2026",
+      "url": "https://iabiomed.org/hackathon-2026/"
+    },
+    {
+      "title": "Best International Work & Best Case Presentation",
+      "detail": "European Society of Emergency Radiology · 2025 & 2024",
+      "url": "https://www.linkedin.com/in/clementegarciahidalgo/details/honors/"
+    },
+    {
+      "title": "Fundación SERAM article award",
+      "detail": "Coauthor of the awarded European Radiology study · 2024",
+      "url": "https://seram.es/premios/"
+    },
+    {
+      "title": "First prize for a residents' congress communication",
+      "detail": "AI ethics and regulation · CESM Murcia / DEPFIM · 2024",
+      "url": "https://medicosdemurcia.com/noticia.asp?id=1892"
+    }
+  ]
+}

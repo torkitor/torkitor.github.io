@@ -1,7 +1,7 @@
 # Clemente García-Hidalgo · Personal website
 
 Academic website in English at [torkitor.github.io](https://torkitor.github.io/).
-Static HTML and CSS, with optional JavaScript bibliography filters. The complete
+Static HTML and CSS, with optional JavaScript filters and animation. The complete
 publication list and links work without JavaScript. No package dependencies,
 analytics, server-side application or external fonts are required.
 
@@ -19,17 +19,24 @@ Open http://127.0.0.1:8765/ to preview. Commit the generated files alongside the
 source changes; GitHub Pages serves those files directly and does not run Python.
 
 - `data/publications.json`: curated bibliography and public source URLs.
-- `data/peer-review.json`: journal-level reviewing counts and their source dates.
+- `data/peer-review.json`: journal names, editorial or reviewing roles, and links.
+- `data/highlights.json`: homepage press coverage, awards, source dates and image
+  provenance.
 - `build_site.py`: home-page content, publication rendering, BibTeX generation
-  and the generated peer-review section on About.
+  and the generated journal-service section on About.
 - `index.html`, `publications/index.html`, `publications/publications.bib`:
   generated outputs. Edit their sources above and rebuild.
 - `about/index.html`: education, professional service and distinctions. Keep the
   peer-review block's generation markers intact; edit its data and rebuild.
 - `software/index.html`: public research projects.
-- `assets/style.css`: shared layout and responsive styles.
+- `assets/style.css`: shared layout, responsive styles and reduced-motion rules.
 - `assets/publications.js`: search, year, topic and first-author filters.
+- `assets/knowledge-cloud.css`, `assets/knowledge-cloud.js`: homepage knowledge
+  map and its optional animation. Preserve keyboard controls, the pause button
+  and the reduced-motion alternative when editing it.
 - `assets/portrait.jpg`: portrait supplied by the author.
+- `assets/news/commurcia-interview.jpg`: photograph from the medical college's
+  interview, with its source and credit recorded in `data/highlights.json`.
 
 The generated pages share navigation in `build_site.py`. About and Software
 retain their own navigation and footer; update those too if the site structure
@@ -60,20 +67,37 @@ publication types. Translations count once. Conference abstracts, repository
 software/data deposits, preprints and unpublished manuscripts are excluded.
 No citation-count, h-index or journal-impact metrics are inferred.
 
-## Maintain the reviewing record
+## Maintain the journal-service record
 
-`data/peer-review.json` records counts supplied by the author from the Springer
-Nature reviewer dashboard. The 12 November 2026 snapshot contains 127 reviewed
-manuscripts across 29 journals. Each journal's `updated` date records the source's
-last update, not the date on which all of its reviews took place.
+`data/peer-review.json` describes journal service without manuscript or journal
+totals. Preserve each role's wording: the Yves Menu Review Fellowship at
+European Radiology, the Trainee Editorial Board at Radiology: Artificial
+Intelligence, and reviewer service at the other listed journals are distinct.
+Fellowship participation does not imply editorial-board membership.
 
-Keep unquantified service in `additional_journals`. JMIR, Insights into Imaging
-and European Radiology Experimental are listed there because their counts were
-not supplied; they are excluded from the 127-manuscript total. The record is
-author-provided, and the underlying review certificates have not been
-independently verified. Do not infer review rounds, acceptance decisions or
-additional totals from these data. Rebuild after changing the record; the
-About section is generated between its existing HTML markers.
+Roles draw on the author's supplied record and the linked institutional
+announcements. The underlying review certificates have not been independently
+verified. Retain the source links, update the record's date when editing it,
+and rebuild. The homepage and About journal sections are generated from this
+file; keep the About section's existing HTML markers intact. Do not restore
+reviewing totals from earlier data or repository history.
+
+Set `featured` for the journals highlighted on the homepage and About. Other
+reviewer roles appear in About's expandable journal list. The public data store
+only `name`, `role`, `url` and `featured` for each entry; use `null` when there is
+no source or journal URL. A link to a journal homepage identifies the journal,
+whereas an institutional announcement substantiates the stated appointment.
+
+## Maintain news and awards
+
+Edit `data/highlights.json` and rebuild. `features` contains press coverage and
+interviews; `recognition` contains the shorter award entries. Keep the source URL
+and publication date with each feature. A news article's publication date is not
+necessarily the date on which its reported award was presented.
+
+For a feature image, retain its local `image` path, dimensions, descriptive
+`alt` text, displayed `credit` and original `image_source` URL. Keep institutional
+announcements in the optional secondary link when they supplement press coverage.
 
 ## Validation
 
@@ -87,13 +111,26 @@ About section is generated between its existing HTML markers.
   publication years, DOI/PMID links, topic/year filters and home-page counts
   against the curated data.
 - BibTeX entry count, unique keys/DOIs, citation years and complete author order.
+- Rendered journal names and roles against their source data, with no reviewing
+  counts or retired count markup.
 
 The checker derives counts from the data, so new works do not require changing
 fixed totals in the validation script. It verifies consistency, not the truth of
 external sources. Check those sources when editing facts. Before publishing,
 preview desktop and mobile layouts and exercise search, combined filters,
-reset, no-results and keyboard navigation. The static checker does not execute
-JavaScript or test remote-server availability.
+reset, no-results, reduced-motion settings and keyboard navigation. The static
+checker does not execute JavaScript or test remote-server availability.
+
+With Node.js installed, run the dependency-free knowledge-map checks:
+
+```sh
+node test_knowledge_cloud.js
+```
+
+It checks deterministic field clusters, rotation invariance and projection bounds
+at mobile and desktop sizes. A lightweight event harness checks animation
+scheduling, reduced motion, keyboard selection and pointer cancellation. Browser
+rendering, accessibility and real-device gesture feel still need a preview.
 
 ## GitHub Pages
 
@@ -120,8 +157,15 @@ completed qualifications.
   source for the Yves Menu Review Fellowship.
 - The current portrait comes from the author's supplied 1280 × 853 photograph,
   replacing the earlier headshot sourced from the fellowship announcement.
-- Peer-review counts and additional reviewing service were supplied by the
-  author on 12 November 2026; provenance is retained in `data/peer-review.json`.
+- The interview photograph is from the
+  [Colegio de Médicos de la Región de Murcia interview](https://commurcia.es/noticia?id=2235),
+  published 18 May 2026. This website credits the medical college; the original
+  [image URL](https://commurcia.es/Z_data/publicaciones/_dsc6266-1_2235.jpg)
+  is retained in `data/highlights.json`.
+- [La Vanguardia / El Llobregat coverage of the ESNR award](https://www.lavanguardia.com/elllobregat/sociedad/20261101/11673413/investigacion-dirigida-bellvitge-recibe-premio-europeo-nuevos-biomarcadores-tumores-cerebrales.html),
+  published 1 November 2026, is linked alongside the IDI institutional announcement.
+- Reviewing service was supplied by the author on 12 November 2026; public
+  journal roles and their links are retained in `data/peer-review.json`.
 - Public repository READMEs linked from the Software page.
 
 The current editorial design takes inspiration from the

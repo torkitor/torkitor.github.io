@@ -56,28 +56,17 @@ figcaption { margin-top: 12px; color: var(--muted); font-size: 12px; line-height
 .links-row a { display: inline-flex; align-items: center; gap: 5px; min-height: 44px; }
 .hero-actions .links-row { margin: 0; }
 .hero > .links-row { grid-column: 1 / -1; }
-.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; margin-top: 72px; padding: 32px 0 30px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
+.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 54px; padding: 32px 0 30px; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--rule); }
 .metric { min-width: 0; }
 .metric strong { display: block; font-size: 64px; font-weight: 400; line-height: 1; letter-spacing: -.065em; font-variant-numeric: tabular-nums; }
 .metric span { display: block; margin-top: 13px; font-size: 16px; line-height: 1.4; }
 .metric small { display: block; margin-top: 5px; color: var(--muted); font-size: 12px; line-height: 1.5; }
-.metrics-note { max-width: 850px; margin-top: 14px; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .research-list { margin: 0; padding: 0; list-style: none; }
 .research-list > * { display: grid; grid-template-columns: minmax(150px, .35fr) minmax(0, 1fr); gap: 48px; padding: 30px 0; border-bottom: 1px solid var(--rule); }
 .research-list > :first-child { padding-top: 0; }
 .research-topic-label { padding-top: 5px; color: var(--muted); font-size: 14px; line-height: 1.6; }
 .research-list h3 { max-width: 720px; font-size: 27px; }
 .research-list h3 + p { max-width: 720px; margin-top: 13px; color: var(--muted); font-size: 17px; }
-.review-feature { display: grid; grid-template-columns: minmax(0, .45fr) minmax(0, 1fr); align-items: start; gap: 64px; padding: 52px 48px; background: var(--ink); color: var(--paper); }
-.review-number { font-size: clamp(96px, 10vw, 140px); font-weight: 400; line-height: .9; letter-spacing: -.07em; font-variant-numeric: tabular-nums; }
-.review-number strong { display: block; font-size: inherit; font-weight: inherit; }
-.review-number small { display: block; margin-top: 20px; font-size: 15px; line-height: 1.5; letter-spacing: 0; }
-.review-copy { min-width: 0; }
-.review-copy h2 { margin-bottom: 24px; padding-bottom: 0; border: 0; color: inherit; font-size: 40px; }
-.review-copy p { max-width: 650px; font-size: 18px; }
-.review-feature a { color: var(--paper); }
-.review-feature .source-note { color: #cbc9c2; font-size: 12px; }
-.review-feature .eyebrow { color: #cbc9c2; }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 32px; padding-bottom: 22px; border-bottom: 1px solid var(--rule); }
 .section-heading h2 { margin: 0; padding: 0; border: 0; }
 .section-heading > a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
@@ -162,17 +151,35 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
 .archive-list { margin: 14px 0 24px; padding-left: 22px; }
 .archive-list li { padding: 7px 0 7px 3px; font-size: 15px; }
 .source-note { max-width: 900px; margin-top: 24px; color: var(--muted); font-size: 12px; line-height: 1.75; }
-.review-summary { display: flex; align-items: baseline; flex-wrap: wrap; gap: 12px 26px; margin: 30px 0; font-size: 21px; line-height: 1.4; }
-.review-summary strong { font-size: 90px; font-weight: 400; line-height: 1; letter-spacing: -.065em; font-variant-numeric: tabular-nums; }
-.review-table-wrap { width: 100%; margin: 20px 0; overflow-x: auto; }
-.review-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.5; text-align: left; }
-.review-table th, .review-table td { padding: 15px 16px 15px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
-.review-table th { font-weight: 500; }
-.review-table th:first-child { width: 60%; }
-.review-table th:nth-child(2), .review-table td:nth-child(2) { width: 16%; text-align: right; font-variant-numeric: tabular-nums; }
-.review-table th:last-child, .review-table td:last-child { padding-right: 0; text-align: right; }
-.review-table td:last-child { color: var(--muted); font-size: 12px; }
-.review-table tfoot { font-weight: 600; }
+.press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
+.press-feature { min-width: 0; }
+.press-feature figure { margin-bottom: 25px; }
+.press-feature img { width: 100%; height: auto; aspect-ratio: 1.36; object-fit: cover; }
+.press-feature figcaption { font-size: 11px; }
+.press-feature .eyebrow { color: var(--accent); }
+.press-feature h3 { margin-bottom: 24px; font-size: clamp(28px, 3.1vw, 42px); line-height: 1.13; }
+.press-feature:first-child { padding-top: 25px; border-top: 3px solid var(--accent); }
+.press-feature:first-child h3 { font-size: clamp(38px, 4.4vw, 60px); }
+.press-feature p { max-width: 580px; }
+.press-links { display: flex; flex-direction: column; align-items: flex-start; }
+.award-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; list-style: none; margin: 52px 0 0; padding: 0; }
+.award-list li { border-top: 1px solid var(--rule); padding: 24px 0; }
+.award-list h3 { font-size: 22px; }
+.award-list p { margin-top: 12px; color: var(--muted); font-size: 14px; }
+.editorial-feature { padding: 44px 48px; background: var(--ink); color: var(--paper); }
+.editorial-feature h2 { border-color: #555b5d; }
+.editorial-feature a { color: var(--paper); }
+.editorial-feature a:focus-visible { outline-color: var(--paper); }
+.journal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
+.journal-grid article { padding: 25px 0; border-bottom: 1px solid var(--rule); }
+.journal-grid h3 { font-family: Georgia, serif; font-size: 28px; font-weight: 400; line-height: 1.23; letter-spacing: -.025em; }
+.journal-role { margin-top: 14px; color: var(--muted); font-size: 13px; }
+.editorial-feature .journal-role { color: #cfccc5; }
+.editorial-feature .journal-grid article { border-color: #555b5d; }
+.editorial-feature .text-link { margin-top: 26px; }
+.editorial-feature a:hover { color: #e9b5a1; }
+.journal-list { columns: 2; column-gap: 38px; margin: 24px 0; padding-left: 22px; }
+.journal-list li { break-inside: avoid; margin-bottom: 12px; font-size: 14px; }
 .site-footer { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 12px 24px; margin-top: 110px; padding: 26px 0 34px; border-top: 1px solid var(--ink); color: var(--muted); font-size: 12px; line-height: 1.6; }
 .site-footer a { color: inherit; }
 
@@ -181,7 +188,6 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   h3 a:hover { color: var(--accent); text-decoration: underline; }
   .site-header nav a:hover { border-bottom-color: var(--ink); }
   .button:hover { background: var(--accent); border-color: var(--accent); color: var(--paper); }
-  .review-feature a:hover { color: #d6b7a8; }
   summary:hover { color: var(--accent); }
 }
 
@@ -193,15 +199,16 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   .hero .subtitle { font-size: 22px; }
   .hero .lead { font-size: 18px; }
   .portrait { height: 510px; }
-  .review-feature { gap: 40px; padding: 42px 34px; }
-  .review-copy h2 { font-size: 34px; }
-  .review-number { font-size: 112px; }
   .research-list > * { gap: 32px; }
   .role-list, .recognition-grid { column-gap: 32px; }
   .publication h3 { font-size: 22px; }
 }
 
 @media (max-width: 760px) {
+  .press-grid { gap: 32px; }
+  .editorial-feature { padding: 30px 26px; }
+  .journal-grid { gap: 0 28px; }
+  .journal-grid h3 { font-size: 25px; }
   .page { width: calc(100% - 40px); }
   body { font-size: 16px; }
   main { padding-top: 40px; }
@@ -231,11 +238,6 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   .research-topic-label { padding: 0; font-size: 13px; }
   .research-list h3 { font-size: 25px; }
   .research-list h3 + p { font-size: 16px; }
-  .review-feature { grid-template-columns: minmax(0, .4fr) minmax(0, 1fr); gap: 30px; padding: 32px 26px; }
-  .review-number { font-size: 86px; }
-  .review-number small { margin-top: 14px; font-size: 13px; }
-  .review-copy h2 { font-size: 30px; }
-  .review-copy p { font-size: 16px; }
   .section-heading { margin-bottom: 26px; padding-bottom: 18px; gap: 6px 20px; }
   .entry h3 { font-size: 23px; }
   .project h3 { font-size: 32px; }
@@ -258,26 +260,21 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   .recognition-grid { gap: 30px 24px; }
   .recognition-grid h3 { font-size: 22px; }
   .recognition-grid p { font-size: 15px; }
-  .review-summary { gap: 12px 22px; font-size: 19px; }
-  .review-summary strong { font-size: 76px; }
-  .review-table { font-size: 14px; }
-  .review-table th, .review-table td { padding-right: 12px; }
-  .review-table th:first-child { width: 52%; }
   .site-footer { margin-top: 76px; }
 }
 
 @media (max-width: 480px) {
+  .press-grid, .award-list, .journal-grid { grid-template-columns: 1fr; }
+  .press-feature:first-child h3 { font-size: 40px; }
+  .journal-list { columns: 1; }
   .site-header { flex-direction: column; align-items: flex-start; gap: 12px; padding: 21px 0 12px; }
   .site-header nav { justify-content: space-between; width: 100%; gap: 8px; }
   .site-header nav a { font-size: 13px; }
   .hero h1 { font-size: clamp(43px, 10.5vw, 54px); }
   .hero .subtitle { font-size: 21px; }
-  .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
-  .metric strong { font-size: 56px; }
-  .review-feature { grid-template-columns: 1fr; gap: 30px; padding: 30px 24px; }
-  .review-number { font-size: 105px; }
-  .review-number small { font-size: 14px; }
-  .review-copy h2 { margin-bottom: 18px; font-size: 30px; }
+  .metrics { gap: 18px; }
+  .metric strong { font-size: 44px; }
+  .metric span { font-size: 13px; }
   .news li { grid-template-columns: 1fr; gap: 8px; font-size: 15px; }
   .news time { padding-top: 0; }
   .publication-heading { align-items: flex-end; gap: 16px; }
@@ -295,11 +292,6 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   .venue { font-size: 13px; }
   .badge { padding-left: 11px; font-size: 11px; }
   .recognition-grid { grid-template-columns: 1fr; }
-  .review-table { font-size: 12px; }
-  .review-table th, .review-table td { padding-right: 9px; }
-  .review-table th:first-child { width: 47%; }
-  .review-table td:last-child { font-size: 11px; }
-  .review-table th { overflow-wrap: anywhere; }
   .links-row { gap: 0 20px; }
 }
 
@@ -315,6 +307,8 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
 }
 
 @media print {
+  .editorial-feature { color: black; background: none; padding: 0; }
+  .editorial-feature a, .editorial-feature .journal-role { color: black; }
   body { background: white; color: black; font-size: 10.5pt; line-height: 1.5; }
   .page { width: 100%; min-height: 0; }
   main { padding-top: 0; }
@@ -326,26 +320,19 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
   h2, h3, summary { break-after: avoid; }
   .hero { grid-template-columns: minmax(0, 1fr) 160px; gap: 28px; }
   .hero .portrait { width: 160px; height: 200px; }
-  .hero .lead, .lead, .review-copy p { font-size: 11pt; }
+  .hero .lead, .lead { font-size: 11pt; }
   .subtitle, .hero .subtitle { font-size: 15pt; }
-  .metrics { grid-template-columns: repeat(4, 1fr); margin-top: 26px; padding: 20px 0; }
+  .metrics { grid-template-columns: repeat(3, 1fr); margin-top: 26px; padding: 20px 0; }
   .metric strong { font-size: 32pt; }
   .metric span { font-size: 10pt; }
   .metric small { font-size: 8pt; }
-  .entry, .publication, .timeline-item, .recognition-grid > *, .review-feature { break-inside: avoid; }
+  .entry, .publication, .timeline-item, .recognition-grid > * { break-inside: avoid; }
   .entry h3, .publication h3, .timeline-item h3, .role-list h3, .recognition-grid h3 { font-size: 13pt; }
   .publication { padding: 20px 0; }
   .publication-total .total-mark { font-size: 56pt; }
   .authors, .meta, .timeline-item p, .role-list p, .recognition-grid p, .archive-list li { font-size: 9pt; }
   .links-row, .source-note { font-size: 8pt; }
   a { color: inherit; text-decoration: none; }
-  .review-feature { grid-template-columns: 150px minmax(0, 1fr); gap: 28px; padding: 24px 0; border-block: 1px solid var(--rule); background: none; color: black; }
-  .review-feature a, .review-feature .source-note { color: black; }
-  .review-number { font-size: 64pt; }
-  .review-copy h2 { font-size: 22pt; }
-  .review-table-wrap { overflow: visible; }
-  .review-table { font-size: 9pt; }
-  .review-table tr { break-inside: avoid; }
   .role-list { grid-template-columns: 1fr 1fr; }
   details.archive { break-inside: auto; }
 }
