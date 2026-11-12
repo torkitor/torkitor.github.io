@@ -1,0 +1,352 @@
+{
+  "updated": "2026-11-12",
+  "title": "My journey.",
+  "intro": "The training, people and collaborations behind my work in radiology, medical imaging and AI. A few moments that have shaped the way I think, and the work I want to do next.",
+  "years": "2017 — now",
+  "hero_images": [
+    "tribio-phd-2026",
+    "seram-interview-2026"
+  ],
+  "images": {
+    "esnr-2026-01": {
+      "src": "assets/journey/esnr-2026-01.jpg",
+      "width": 800,
+      "height": 1061,
+      "alt": "Clemente receiving the ESNR Scientific Award on stage in London",
+      "caption": "Receiving the ESNR Scientific Award, London, 2026.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7511689524733775872/"
+    },
+    "esnr-2026-04": {
+      "src": "assets/journey/esnr-2026-04.jpg",
+      "width": 800,
+      "height": 450,
+      "alt": "Clemente holding his ESNR award certificate outside the Queen Elizabeth II Centre",
+      "caption": "After the award ceremony at the Queen Elizabeth II Centre.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7511689524733775872/"
+    },
+    "iabiomed-2026-01": {
+      "src": "assets/journey/iabiomed-2026-01.jpg",
+      "width": 800,
+      "height": 1066,
+      "alt": "Clemente receiving the Treelogic challenge prize at IABiomed 2026",
+      "caption": "The Treelogic challenge award at IABiomed 2026.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7522907960025665536/"
+    },
+    "tribio-phd-2026": {
+      "src": "assets/journey/tribio-phd-2026.jpg",
+      "width": 1280,
+      "height": 719,
+      "alt": "Clemente with colleagues from the Bellvitge research team",
+      "caption": "The Bellvitge team, shared in my second-year PhD recap.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:share:7485662393285562368/"
+    },
+    "seram-team-2026": {
+      "src": "assets/journey/seram-team-2026.jpg",
+      "width": 1280,
+      "height": 960,
+      "alt": "Clemente presenting his research at SERAM in 2026",
+      "caption": "Presenting at SERAM, 2026.",
+      "credit": "Shared by Albert Pons-Escoda",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7464945923169714176/"
+    },
+    "seram-interview-2026": {
+      "src": "assets/journey/seram-interview-2026.jpg",
+      "width": 1177,
+      "height": 716,
+      "alt": "Clemente speaking with interviewer Carles Aguilar",
+      "caption": "A conversation about radiology with Carles Aguilar, 2026.",
+      "credit": "Carles Aguilar",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:share:7463667313343459328/"
+    },
+    "bracco-eusomii-ecr-2026": {
+      "src": "assets/journey/bracco-eusomii-ecr-2026.jpg",
+      "width": 800,
+      "height": 1199,
+      "alt": "Photographs from the Bracco–EuSoMII AI Contest at ECR 2026",
+      "caption": "Bracco–EuSoMII AI Contest, ECR 2026.",
+      "credit": "Photo: Havas PR Milan / EuSoMII",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:share:7438181015250055169/"
+    },
+    "eser-award-2025": {
+      "src": "assets/journey/eser-award-2025.jpg",
+      "width": 800,
+      "height": 1066,
+      "alt": "Clemente accepting the Best International Communication award at the joint SERAU–ESER meeting in Málaga, 2025",
+      "caption": "Award ceremony at the joint SERAU–ESER meeting, Málaga, 2025.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/feed/update/urn:li:activity:7379866020053692416/"
+    },
+    "seram-team-award-2024": {
+      "src": "assets/journey/seram-team-award-2024.jpg",
+      "width": 1280,
+      "height": 720,
+      "alt": "Clemente at the Fundación SERAM awards event in November 2024",
+      "caption": "Fundación SERAM recognition, November 2024.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/in/clementegarciahidalgo/recent-activity/all/"
+    },
+    "eser-congress-2024": {
+      "src": "assets/journey/eser-congress-2024.jpg",
+      "width": 800,
+      "height": 1066,
+      "alt": "Clemente presenting at the ESER 2024 congress lectern",
+      "caption": "Presenting at the ESER congress, 2024.",
+      "credit": "From my LinkedIn",
+      "source_url": "https://www.linkedin.com/in/clementegarciahidalgo/recent-activity/all/"
+    },
+    "umu-emprende-2022": {
+      "src": "assets/journey/umu-emprende-2022.jpg",
+      "width": 640,
+      "height": 427,
+      "alt": "Group photograph at the University of Murcia Talento UMUEmprende awards",
+      "caption": "Talento UMUEmprende awards, December 2022.",
+      "credit": "Photo: Universidad de Murcia",
+      "source_url": "https://www.murcia.com/noticias/2022/12/14-la-universidad-de-murcia-entrega-los-premios-a-las-mejores-ideas-de-negocio.asp"
+    }
+  },
+  "chapters": [
+    {
+      "id": "esnr-2026",
+      "year": "2026",
+      "index_label": "01 / ESNR",
+      "date": "October 2026",
+      "category": "London",
+      "title": "ESNR Scientific Award 2026",
+      "subtitle": "European Society of Neuroradiology",
+      "paragraphs": [
+        "Receiving this award as its youngest recipient and the second from Spain, after my mentor Dr Albert Pons-Escoda, makes it especially meaningful to me.",
+        "The award recognises our work on DSC perfusion biomarkers in adult brain tumours. I received it with deep gratitude to my supervisors Albert Pons-Escoda and Ignacio Martínez-Zalacaín, to Pablo Naval-Baudin, and to the whole Bellvitge team."
+      ],
+      "honors": [
+        "Research developed with Bellvitge and IDIBELL.",
+        "Covered by La Vanguardia / El Llobregat and the Institut de Diagnòstic per la Imatge."
+      ],
+      "links": [
+        {
+          "label": "Institutional announcement",
+          "url": "https://idi.gencat.cat/ca/actualitat/2026/esnr-premia-recerca-tumors-cerebrals"
+        },
+        {
+          "label": "My reflections",
+          "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7505622284875784192/"
+        }
+      ],
+      "images": [
+        "esnr-2026-01",
+        "esnr-2026-04"
+      ]
+    },
+    {
+      "id": "building-ai",
+      "year": "2026",
+      "index_label": "02 / Building",
+      "date": "2026",
+      "category": "Medical AI",
+      "title": "From ideas to working tools.",
+      "subtitle": "IABiomed · Bracco–EuSoMII · ECR",
+      "paragraphs": [
+        "Writing software brings another kind of discipline to research: an idea has to survive implementation. At IABiomed, my work on visual de-identification of medical images won the Treelogic challenge.",
+        "At the Bracco–EuSoMII AI Contest during ECR, I received the Best Model Optimisation award. These hands-on collaborations sit alongside my research on how medical AI is evaluated."
+      ],
+      "honors": [
+        "Treelogic challenge winner, IABiomed 2026.",
+        "Best Model Optimisation, Bracco–EuSoMII AI Contest 2026."
+      ],
+      "links": [
+        {
+          "label": "IABiomed award",
+          "url": "https://www.linkedin.com/feed/update/urn:li:ugcPost:7522907960025665536/"
+        },
+        {
+          "label": "EuSoMII announcement",
+          "url": "https://www.linkedin.com/feed/update/urn:li:share:7438181015250055169/"
+        }
+      ],
+      "images": [
+        "iabiomed-2026-01",
+        "bracco-eusomii-ecr-2026"
+      ]
+    },
+    {
+      "id": "contributing",
+      "year": "2026",
+      "index_label": "03 / Community",
+      "date": "2026",
+      "category": "Editorial work & teaching",
+      "title": "Learning by contributing.",
+      "subtitle": "European Radiology · Radiology: Artificial Intelligence · SERAM",
+      "paragraphs": [
+        "Peer review and teaching have become an important part of my training. In 2026, I joined the Yves Menu Review Fellowship at European Radiology and the Radiology: Artificial Intelligence Trainee Editorial Board.",
+        "I also serve as general coordinator of Club Bibliográfico SERAM and became a Calatayud editorial fellow with Radiología in 2026. Alongside these roles, I help lead Healthcademia’s AI and innovation work in Spain."
+      ],
+      "honors": [
+        "One Magna Cum Laude and two honourable mentions for our work at SERAM 2026.",
+        "NIIC 2026 Fall Term Scholarship, supported by RSNA, DPA and SIIM.",
+        "Our primary CNS lymphoma study featured on the cover of Journal of Neuro-Oncology."
+      ],
+      "links": [
+        {
+          "label": "Editorial profile",
+          "url": "../about/#leadership"
+        },
+        {
+          "label": "SERAM recognition",
+          "url": "https://www.linkedin.com/feed/update/urn:li:activity:7472266018837544961/"
+        }
+      ],
+      "images": [
+        "seram-team-2026"
+      ]
+    },
+    {
+      "id": "deeper-training",
+      "year": "2025–26",
+      "index_label": "04 / Methods",
+      "date": "2025–2026",
+      "category": "Research training",
+      "title": "Going deeper into imaging and data.",
+      "subtitle": "Bellvitge · Oxford · Barcelona",
+      "paragraphs": [
+        "A further research stay at Bellvitge in summer 2025, the Oxford FSL course and DeepBrainTech training at the University of Barcelona helped me deepen my approach to neuroimaging.",
+        "I completed my MSc in Bioinformatics with honours in 2026, supported by the College of Physicians of Murcia. My doctoral work also received a College research fellowship for 2025–2026."
+      ],
+      "honors": [
+        "Best International Communication, ESER 2025.",
+        "AECC scholarship to attend the 2025 Young Cancer Researchers meeting.",
+        "Santander scholarships for Fundación General CSIC training in good scientific practice, in two consecutive cohorts."
+      ],
+      "links": [
+        {
+          "label": "Education & training",
+          "url": "../about/#education"
+        },
+        {
+          "label": "Awards & fellowships",
+          "url": "../about/#recognition"
+        }
+      ],
+      "images": [
+        "eser-award-2025"
+      ]
+    },
+    {
+      "id": "radiology-residency",
+      "year": "2024",
+      "index_label": "05 / Radiology",
+      "date": "2024",
+      "category": "Residency & PhD",
+      "title": "Making radiology my daily work.",
+      "subtitle": "Hospital Morales Meseguer · Bellvitge–IDIBELL",
+      "paragraphs": [
+        "I began my radiology residency at Hospital Morales Meseguer in May 2024, and started my doctoral studies later that year. Clinical training and the research questions emerging from imaging could now develop side by side.",
+        "The year also brought my first ESER congress award and a Fundación SERAM award for a European Radiology paper I coauthored. Sharing these experiences with colleagues made them especially memorable."
+      ],
+      "honors": [
+        "Best Case Presentation, ESER 2024.",
+        "Fundación SERAM article award, as a coauthor.",
+        "First prize for a residents’ congress communication, CESM Murcia / DEPFIM.",
+        "Best work at the VIII Medical Education Meeting, and best clinical case from the Murcian Society for the Study of Head and Neck Tumours."
+      ],
+      "links": [
+        {
+          "label": "Clinical & research experience",
+          "url": "../about/#clinical-research"
+        },
+        {
+          "label": "Recognition archive",
+          "url": "../about/#recognition"
+        }
+      ],
+      "images": [
+        "seram-team-award-2024",
+        "eser-congress-2024"
+      ]
+    },
+    {
+      "id": "medical-degree",
+      "year": "2023",
+      "index_label": "06 / Medicine",
+      "date": "2023",
+      "category": "University of Murcia",
+      "title": "A medical degree. New questions.",
+      "subtitle": "Medicine · First publications · Research presentations",
+      "paragraphs": [
+        "Graduating in Medicine brought together six years of study and clinical placements. During the same year, I published my first European Radiology paper and presented research beyond the classroom.",
+        "Recognition at Encuentro TF and the first national APURF congress encouraged me to keep pursuing research alongside clinical work."
+      ],
+      "honors": [
+        "Best medical undergraduate thesis and associated scholarship, University of Murcia Encuentro TF, 2023.",
+        "Best communication, First National Congress of Students of Radiology and Physical Medicine, APURF, 2023.",
+        "Best communication, National Medical Education Meeting, 2023."
+      ],
+      "links": [
+        {
+          "label": "Publications from 2023",
+          "url": "../publications/?year=2023"
+        },
+        {
+          "label": "Full academic profile",
+          "url": "../about/"
+        }
+      ],
+      "images": []
+    },
+    {
+      "id": "first-bellvitge",
+      "year": "2022",
+      "index_label": "07 / First steps",
+      "date": "2022",
+      "category": "Research & entrepreneurship",
+      "title": "A first stay at Bellvitge.",
+      "subtitle": "Barcelona · Murcia",
+      "paragraphs": [
+        "My first research stay at Bellvitge, in August 2022, marked the beginning of a collaboration that would become central to my doctoral work.",
+        "Back in Murcia, the HapticBrain project received an accésit in the Talento UMUEmprende awards. It was an early opportunity to explore how technical ideas could become useful tools for medicine."
+      ],
+      "honors": [
+        "HapticBrain, Talento UMUEmprende accésit.",
+        "Santander scholarship for rural and social-health placements.",
+        "University of Murcia scholarship to attend the EUniWell Summer School on COVID-19, health and well-being at Leiden University."
+      ],
+      "links": [
+        {
+          "label": "University award coverage",
+          "url": "https://www.murcia.com/noticias/2022/12/14-la-universidad-de-murcia-entrega-los-premios-a-las-mejores-ideas-de-negocio.asp"
+        }
+      ],
+      "images": [
+        "umu-emprende-2022"
+      ]
+    },
+    {
+      "id": "foundations",
+      "year": "2017–21",
+      "index_label": "08 / Foundations",
+      "date": "2017–2021",
+      "category": "The beginning",
+      "title": "Learning to look closely.",
+      "subtitle": "Medical school · Early clinical placements",
+      "paragraphs": [
+        "I started Medicine at the University of Murcia in 2017. Undergraduate placements in surgery and, later, radiology helped me discover the questions I wanted to spend more time with.",
+        "Early opportunities in science, mobility and student research gave me room to explore. By 2021, that curiosity had found a particular home in medical imaging."
+      ],
+      "honors": [
+        "Second prize for a communication, SERAM International Radiology Congress for Medical Students, 2021.",
+        "Third prize for a poster, X Biomedical Research Congress, University of Valencia, 2021.",
+        "Scholarship for the XIX Eladio Viñuela School of Molecular Biology, UIMP, 2018.",
+        "Accésit, XXII Regional Chemistry Olympiad of Murcia, and Ortega y Gasset scholarship, UIMP, 2017."
+      ],
+      "links": [
+        {
+          "label": "Complete early recognition",
+          "url": "../about/#recognition"
+        }
+      ],
+      "images": []
+    }
+  ]
+}

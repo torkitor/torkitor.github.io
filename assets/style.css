@@ -154,13 +154,18 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
 .press-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
 .press-feature { min-width: 0; }
 .press-feature figure { margin-bottom: 25px; }
-.press-feature img { width: 100%; height: auto; aspect-ratio: 1.36; object-fit: cover; }
+.press-feature img { width: 100%; height: auto; }
 .press-feature figcaption { font-size: 11px; }
 .press-feature .eyebrow { color: var(--accent); }
 .press-feature h3 { margin-bottom: 24px; font-size: clamp(28px, 3.1vw, 42px); line-height: 1.13; }
-.press-feature:first-child { padding-top: 25px; border-top: 3px solid var(--accent); }
+.press-feature:first-child { padding-top: 0; }
 .press-feature:first-child h3 { font-size: clamp(38px, 4.4vw, 60px); }
 .press-feature p { max-width: 580px; }
+.journey-preview { display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: center; padding-block: 42px; border-block: 1px solid var(--rule); }
+.journey-preview img { width: 100%; height: auto; }
+.journey-preview h2 { margin-bottom: 24px; padding-bottom: 0; border: 0; font-size: clamp(36px, 4.1vw, 54px); line-height: 1.08; letter-spacing: -.045em; }
+.journey-preview .eyebrow { color: var(--accent); }
+.journey-preview .text-link { display: inline-flex; align-items: center; min-height: 44px; margin-top: 16px; }
 .press-links { display: flex; flex-direction: column; align-items: flex-start; }
 .award-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; list-style: none; margin: 52px 0 0; padding: 0; }
 .award-list li { border-top: 1px solid var(--rule); padding: 24px 0; }
@@ -205,6 +210,7 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
 }
 
 @media (max-width: 760px) {
+  .journey-preview { grid-template-columns: 1fr; gap: 28px; padding-block: 30px; }
   .press-grid { gap: 32px; }
   .editorial-feature { padding: 30px 26px; }
   .journal-grid { gap: 0 28px; }
@@ -296,6 +302,8 @@ details.archive h4 { margin: 24px 0 12px; font-size: 18px; font-weight: 500; }
 }
 
 @media (max-width: 360px) {
+  .site-header nav { gap: 6px; }
+  .site-header nav a { font-size: 12px; }
   .publication-heading { display: block; }
   .publication-heading h1 { font-size: 44px; }
   .publication-total { display: flex; align-items: baseline; gap: 18px; margin-top: 24px; text-align: left; }

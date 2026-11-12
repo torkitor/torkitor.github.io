@@ -1,14 +1,20 @@
 {
   "features": [
     {
-      "label": "ESNR Scientific Award · 2026",
-      "title": "Brain tumour research recognised by the ESNR",
-      "text": "La Vanguardia reports on the ESNR award for our research into DSC perfusion biomarkers in adult brain tumours, developed with the Bellvitge and IDIBELL team.",
+      "label": "Recognition · London",
+      "title": "ESNR Scientific Award 2026",
+      "text": "The youngest recipient and the second from Spain, following my mentor, Dr Albert Pons-Escoda. A shared achievement with the Bellvitge team, and one I am deeply grateful for.",
       "source": "La Vanguardia / El Llobregat",
       "url": "https://www.lavanguardia.com/elllobregat/sociedad/20261101/11673413/investigacion-dirigida-bellvitge-recibe-premio-europeo-nuevos-biomarcadores-tumores-cerebrales.html",
       "date": "1 November 2026",
       "secondary_url": "https://idi.gencat.cat/ca/actualitat/2026/esnr-premia-recerca-tumors-cerebrals",
-      "secondary_label": "IDI institutional announcement"
+      "secondary_label": "IDI institutional announcement",
+      "image": "assets/journey/esnr-2026-04.jpg",
+      "width": 800,
+      "height": 450,
+      "alt": "Clemente holding his ESNR award certificate outside the Queen Elizabeth II Centre",
+      "credit": "After the ESNR award ceremony, London, 2026. From my LinkedIn.",
+      "image_source": "https://www.linkedin.com/feed/update/urn:li:activity:7511689524733775872/"
     },
     {
       "label": "Interview · Colegio de Médicos de Murcia",
@@ -32,7 +38,17 @@
       "url": "https://iabiomed.org/hackathon-2026/"
     },
     {
-      "title": "Best International Work & Best Case Presentation",
+      "title": "Best Model Optimisation",
+      "detail": "Bracco–EuSoMII AI Contest · ECR 2026",
+      "url": "https://www.linkedin.com/feed/update/urn:li:share:7438181015250055169/"
+    },
+    {
+      "title": "Magna Cum Laude & two honourable mentions",
+      "detail": "Shared research recognition · SERAM 2026",
+      "url": "https://www.linkedin.com/feed/update/urn:li:activity:7472266018837544961/"
+    },
+    {
+      "title": "Best International Communication & Best Case Presentation",
       "detail": "European Society of Emergency Radiology · 2025 & 2024",
       "url": "https://www.linkedin.com/in/clementegarciahidalgo/details/honors/"
     },

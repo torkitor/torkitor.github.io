@@ -22,9 +22,10 @@ source changes; GitHub Pages serves those files directly and does not run Python
 - `data/peer-review.json`: journal names, editorial or reviewing roles, and links.
 - `data/highlights.json`: homepage press coverage, awards, source dates and image
   provenance.
-- `build_site.py`: home-page content, publication rendering, BibTeX generation
-  and the generated journal-service section on About.
-- `index.html`, `publications/index.html`, `publications/publications.bib`:
+- `data/journey.json`: career timeline, milestone text, source links and photographs.
+- `build_site.py`: home-page content, career timeline, publication rendering,
+  BibTeX generation and the generated journal-service section on About.
+- `index.html`, `journey/index.html`, `publications/index.html`, `publications/publications.bib`:
   generated outputs. Edit their sources above and rebuild.
 - `about/index.html`: education, professional service and distinctions. Keep the
   peer-review block's generation markers intact; edit its data and rebuild.
@@ -34,6 +35,9 @@ source changes; GitHub Pages serves those files directly and does not run Python
 - `assets/knowledge-cloud.css`, `assets/knowledge-cloud.js`: homepage knowledge
   map and its optional animation. Preserve keyboard controls, the pause button
   and the reduced-motion alternative when editing it.
+- `assets/journey.css`, `assets/journey.js`: career timeline, chapter navigation
+  and optional scroll reveals. Preserve readable content without JavaScript and
+  when reduced motion is requested.
 - `assets/portrait.jpg`: portrait supplied by the author.
 - `assets/news/commurcia-interview.jpg`: photograph from the medical college's
   interview, with its source and credit recorded in `data/highlights.json`.
@@ -41,6 +45,9 @@ source changes; GitHub Pages serves those files directly and does not run Python
 The generated pages share navigation in `build_site.py`. About and Software
 retain their own navigation and footer; update those too if the site structure
 changes.
+
+The site has five main pages: Home, Journey, Publications, Software and About.
+The checker compares their navigation, including each page's current-page link.
 
 ## Maintain the bibliography
 
@@ -99,6 +106,27 @@ For a feature image, retain its local `image` path, dimensions, descriptive
 `alt` text, displayed `credit` and original `image_source` URL. Keep institutional
 announcements in the optional secondary link when they supplement press coverage.
 
+## Maintain the career timeline
+
+Edit `data/journey.json` and rebuild. Keep dates at the precision supported by the
+source: an announcement date does not establish an award-ceremony date, and an
+expected doctoral completion date does not establish a completed qualification.
+The current research affiliation and degree-awarding institution serve different
+purposes; preserve PhD-candidate status and the author's requested lab attribution.
+
+Distinguish personal awards, team distinctions, editorial appointments, training
+scholarships and achievements credited to a mentor. Avoid duplicating a prize
+and its associated scholarship. Preserve links and image attribution with the
+milestone. Full social-post archives and uncurated evidence remain outside the
+public repository.
+
+`chapters` sets the timeline order and chapter anchors. Keep each chapter's `id`
+unique and stable. Its `images` and the top-level `hero_images` refer to the
+`images` dictionary, which retains local paths, dimensions, alt text, captions,
+credits and public source URLs. Use public post links, not account analytics or
+campaign-management links. Keep the readable dates and their supported precision
+in `date`; `year` and `index_label` supply the chapter navigation.
+
 ## Validation
 
 `check_site.py` checks:
@@ -113,6 +141,8 @@ announcements in the optional secondary link when they supplement press coverage
 - BibTeX entry count, unique keys/DOIs, citation years and complete author order.
 - Rendered journal names and roles against their source data, with no reviewing
   counts or retired count markup.
+- Career milestone order, dates and source text against the timeline data;
+  chapter anchors, local photographs and displayed photo attribution.
 
 The checker derives counts from the data, so new works do not require changing
 fixed totals in the validation script. It verifies consistency, not the truth of
@@ -121,16 +151,17 @@ preview desktop and mobile layouts and exercise search, combined filters,
 reset, no-results, reduced-motion settings and keyboard navigation. The static
 checker does not execute JavaScript or test remote-server availability.
 
-With Node.js installed, run the dependency-free knowledge-map checks:
+With Node.js installed, run the dependency-free interaction checks:
 
 ```sh
 node test_knowledge_cloud.js
+node test_journey.js
 ```
 
-It checks deterministic field clusters, rotation invariance and projection bounds
-at mobile and desktop sizes. A lightweight event harness checks animation
-scheduling, reduced motion, keyboard selection and pointer cancellation. Browser
-rendering, accessibility and real-device gesture feel still need a preview.
+These check the knowledge map's geometry and controller behaviour, and the
+timeline's chapter selection, reveal lifecycle, anchors and motion preferences.
+Their simulated browser objects catch logic regressions; they do not establish
+visual quality or real-device gesture behaviour. Keep the browser preview step.
 
 ## GitHub Pages
 
@@ -166,11 +197,16 @@ completed qualifications.
   published 1 November 2026, is linked alongside the IDI institutional announcement.
 - Reviewing service was supplied by the author on 12 November 2026; public
   journal roles and their links are retained in `data/peer-review.json`.
+- Career milestones combine the author's profile and posts, institutional
+  announcements and supplied clarifications. `data/journey.json` retains the
+  public links and photographic sources; source snapshots and editorial notes
+  remain in the private research folder. Distinguish author-provided claims
+  from independently documented institutional statements when updating them.
 - Public repository READMEs linked from the Software page.
 
 The current editorial design takes inspiration from the
 [Inspora website gallery](https://www.inspora.design/websites), including the
 Brikken + Co reference viewed there. The first layout was inspired by
 [Swann Bessa's academic website](https://swannbessa.github.io/). The implementation
-and personal content were prepared independently. No institutional logos,
-unpublished manuscripts or private repository contents are included.
+and personal content were prepared independently. No unpublished manuscripts
+or private repository contents are included.

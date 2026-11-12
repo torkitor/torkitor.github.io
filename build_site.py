@@ -1,4 +1,4 @@
-"""Render the home page, complete bibliography and BibTeX from curated public data."""
+"""Render the home page, journey and bibliography from curated public data."""
 import json
 import re
 from collections import Counter
@@ -23,11 +23,16 @@ def e(value):
 
 def page(title, description, body, active):
     prefix = '' if active == 'Home' else '../'
-    path = '' if active == 'Home' else 'publications/'
+    path = {'Home': '', 'Publications': 'publications/', 'Journey': 'journey/'}[active]
     navigation = ''.join(
         f'<a href="{prefix}{target}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>'
-        for label, target in [('Home', './'), ('Publications', 'publications/'), ('Software', 'software/'), ('About', 'about/')])
-    script = '<script src="../assets/publications.js?v=20261112-r3" defer></script>' if active == 'Publications' else '<link rel="stylesheet" href="assets/knowledge-cloud.css?v=20261112-r3"><script src="assets/knowledge-cloud.js?v=20261112-r3" defer></script>'
+        for label, target in [('Home', './'), ('Publications', 'publications/'), ('Software', 'software/'), ('Journey', 'journey/'), ('About', 'about/')])
+    script = {
+        'Home': '<link rel="stylesheet" href="assets/knowledge-cloud.css?v=20261112-r5"><script src="assets/knowledge-cloud.js?v=20261112-r5" defer></script>',
+        'Publications': '<script src="../assets/publications.js?v=20261112-r5" defer></script>',
+        'Journey': '<link rel="stylesheet" href="../assets/journey.css?v=20261112-r5"><script src="../assets/journey.js?v=20261112-r5" defer></script>',
+    }[active]
+    body_class = ' class="journey-page"' if active == 'Journey' else ''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -40,12 +45,12 @@ def page(title, description, body, active):
   <meta property="og:description" content="{e(description)}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://torkitor.github.io/{path}">
-  <meta property="og:image" content="https://torkitor.github.io/assets/portrait.jpg?v=20261112-r3">
+  <meta property="og:image" content="https://torkitor.github.io/assets/portrait.jpg?v=20261112-r5">
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261112-r3">
+  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261112-r5">
 {script}
 </head>
-<body>
+<body{body_class}>
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="page">
     <header class="site-header"><a class="wordmark" href="{prefix}./" aria-label="Clemente García-Hidalgo, home">CGH /</a><nav aria-label="Main navigation">{navigation}</nav></header>
@@ -135,15 +140,19 @@ def home():
           <p class="eyebrow">MD, MSc · PhD candidate</p>
           <h1>Clemente<br>García-Hidalgo</h1>
           <p class="subtitle">Radiology, Medical Imaging and AI</p>
-          <p class="affiliation">Radiology resident at Hospital Morales Meseguer, Murcia.<br>Doctoral research at the University of Murcia and IDIBELL–Bellvitge. MSc in Bioinformatics.</p>
-          <div class="hero-actions"><a class="button" href="publications/">Publications <span aria-hidden="true">↗</span></a><a href="about/">Academic profile <span aria-hidden="true">↗</span></a></div>
+          <p class="affiliation">Radiology resident at Hospital Morales Meseguer, Murcia.<br>PhD candidate at the Translational Imaging Biomarkers Group of Bellvitge–IDIBELL, Barcelona. Albert Pons-Escoda’s lab.</p>
+          <div class="hero-actions"><a class="button" href="publications/">Publications <span aria-hidden="true">↗</span></a><a href="journey/">My journey <span aria-hidden="true">↗</span></a></div>
           <div class="links-row" aria-label="Professional profiles and contact"><a href="https://orcid.org/0009-0001-6672-2714">ORCID</a><a href="https://github.com/torkitor">GitHub</a><a href="https://www.linkedin.com/in/clementegarciahidalgo/">LinkedIn</a><a href="mailto:clemente292@gmail.com">Email</a></div>
         </div>
-        <figure><img class="portrait" src="assets/portrait.jpg?v=20261112-r3" width="1280" height="853" fetchpriority="high" alt="Clemente García-Hidalgo"></figure>
+        <figure><img class="portrait" src="assets/portrait.jpg?v=20261112-r5" width="1280" height="853" fetchpriority="high" alt="Clemente García-Hidalgo"></figure>
       </div>
 
       <div class="metrics" aria-label="Publication record">{metrics}</div>
       {highlights()}
+      <section class="journey-preview" aria-labelledby="journey-preview-heading">
+        <figure><img src="assets/journey/tribio-phd-2026.jpg" width="1280" height="719" loading="lazy" alt="Clemente with colleagues from the Bellvitge research team"><figcaption>With the Bellvitge research team.</figcaption></figure>
+        <div><p class="eyebrow">2017 — now</p><h2 id="journey-preview-heading">The journey<br>behind the work.</h2><p>From medical school in Murcia to doctoral research at Bellvitge: the people, places and shared milestones along the way.</p><a class="text-link" href="journey/">Explore my journey →</a></div>
+      </section>
       {peer_review(compact=True)}
       <section id="knowledge-map" aria-labelledby="knowledge-heading">
         <div class="section-heading"><h2 id="knowledge-heading">Research fields</h2></div>
@@ -168,6 +177,38 @@ def highlights():
         features.append(f'<article class="press-feature">{photo}<p class="eyebrow">{e(item["label"])}</p><h3><a href="{e(item["url"])}">{e(item["title"])}</a></h3><p>{e(item["text"])}</p><p class="meta">{e(item["source"])} · {e(item["date"])}</p><div class="press-links"><a class="text-link" href="{e(item["url"])}">Read the coverage ↗</a>{secondary}</div></article>')
     awards = ''.join(f'<li><h3><a href="{e(item["url"])}">{e(item["title"])}</a></h3><p>{e(item["detail"])}</p></li>' for item in data['recognition'])
     return f'''<section id="awards-news" aria-labelledby="awards-news-heading"><div class="section-heading"><h2 id="awards-news-heading">Awards &amp; in the news</h2><a href="about/#recognition">Full recognition history ↗</a></div><div class="press-grid">{''.join(features)}</div><ul class="award-list">{awards}</ul></section>'''
+
+
+def journey():
+    data = json.loads((ROOT / 'data/journey.json').read_text(encoding='utf-8'))
+
+    def photos(ids, hero=False):
+        figures = []
+        for index, image_id in enumerate(ids):
+            item = data['images'][image_id]
+            loading = 'fetchpriority="high"' if hero and index == 0 else 'loading="lazy"'
+            figures.append(f'<figure><img src="../{e(item["src"])}" width="{item["width"]}" height="{item["height"]}" {loading} alt="{e(item["alt"])}"><figcaption>{e(item["caption"])} <a href="{e(item["source_url"])}">{e(item["credit"])}</a></figcaption></figure>')
+        return ''.join(figures)
+
+    chapters = []
+    for item in data['chapters']:
+        paragraphs = ''.join(f'<p>{e(text)}</p>' for text in item['paragraphs'])
+        links = ''.join(f'<a href="{e(link["url"])}">{e(link["label"])} ↗</a>' for link in item['links'])
+        honors = ''.join(f'<li>{e(text)}</li>' for text in item['honors'])
+        media = f'<div class="journey-media">{photos(item["images"])}</div>' if item['images'] else ''
+        no_media = '' if item['images'] else ' without-media'
+        chapters.append(f'''<article class="journey-chapter{no_media}" id="{e(item['id'])}" data-milestone="{e(item['id'])}" data-year="{e(item['year'])}" tabindex="-1">
+          <div class="journey-marker" aria-hidden="true"></div><div class="journey-copy">
+            <p class="eyebrow">{e(item['date'])} / {e(item['category'])}</p><h2>{e(item['title'])}</h2>
+            <p class="journey-subtitle">{e(item['subtitle'])}</p>{paragraphs}
+            <div class="journey-links">{links}</div><ul class="journey-honors">{honors}</ul>
+          </div>{media}</article>''')
+    index = ''.join(f'<a href="#{e(item["id"])}" data-chapter-link="{e(item["id"])}">{e(item["index_label"])}</a>' for item in data['chapters'])
+    return f'''<div class="journey-intro"><p class="eyebrow">A personal timeline</p><h1>{e(data['title'])}</h1><p class="lead">{e(data['intro'])}</p><p class="journey-years">{e(data['years'])}</p></div>
+      <div class="journey-hero-media">{photos(data['hero_images'], hero=True)}</div>
+      <nav class="journey-index" aria-label="Journey chapters">{index}</nav>
+      <section class="journey-timeline" id="journey-timeline" aria-label="Career timeline"><div class="journey-track" aria-hidden="true"><div class="journey-progress"></div></div>{''.join(chapters)}</section>
+      <section class="contact"><h2>The work continues.</h2><p>Explore the research, or get in touch about a collaboration.</p><div class="links-row"><a href="../publications/">Publications →</a><a href="../about/#recognition">Full recognition history →</a><a href="mailto:clemente292@gmail.com">Get in touch ↗</a></div></section>'''
 
 
 def peer_review(compact=False):
@@ -217,4 +258,7 @@ if __name__ == '__main__':
     (ROOT / 'publications/index.html').write_text(page('Publications',
         f'{len(WORKS)} journal publications by Clemente García-Hidalgo, including {FIRST} first-author and {SOLE} sole-author works. Search the complete bibliography and download BibTeX.', catalogue(), 'Publications'), encoding='utf-8')
     (ROOT / 'publications/publications.bib').write_text(bibliography(), encoding='utf-8')
-    print(f'Built home, {len(WORKS)}-work catalogue and BibTeX bibliography.')
+    (ROOT / 'journey').mkdir(exist_ok=True)
+    (ROOT / 'journey/index.html').write_text(page('My journey',
+        'The training, people and collaborations behind Clemente García-Hidalgo’s work in radiology, medical imaging and AI.', journey(), 'Journey'), encoding='utf-8')
+    print(f'Built home, journey, {len(WORKS)}-work catalogue and BibTeX bibliography.')

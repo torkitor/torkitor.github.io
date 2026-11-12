@@ -1,4 +1,4 @@
-"""Validate the static site and generated publication/review records with the stdlib."""
+"""Validate static pages, publications, journal service and the career timeline."""
 from collections import Counter
 from datetime import date
 from html.parser import HTMLParser
@@ -14,6 +14,12 @@ def clean(value):
     return " ".join(value.split())
 
 
+def local_target(page_path, href):
+    path = unquote(urlsplit(href).path)
+    target = (ROOT / path.lstrip("/") if path.startswith("/") else page_path.parent / path).resolve() if path else page_path
+    return target / "index.html" if target.is_dir() else target
+
+
 class Page(HTMLParser):
     def __init__(self, path):
         super().__init__()
@@ -25,14 +31,35 @@ class Page(HTMLParser):
         self.metric_depth = self.strong_depth = 0
         self.in_details = False
         self.text, self.classes = [], set()
+        self.navigation, self.navigation_current = [], []
+        self.in_navigation = False
         self.caption_text, self.in_caption = [], False
         self.review_text, self.review_journals = [], []
         self.review_count_markup = set()
         self.review_section_depth = 0
         self.review_journal = None
+        self.milestones, self.milestone = [], None
+        self.milestone_depth = 0
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
+        if "data-milestone" in a:
+            assert self.milestone is None, f"Nested timeline milestones: {self.path}"
+            self.milestone = {"id": a["data-milestone"], "year": a.get("data-year"), "tag": tag, "text": [], "links": [], "images": []}
+            self.milestones.append(self.milestone)
+            self.milestone_depth = 0
+        if self.milestone is not None:
+            self.milestone_depth += tag == self.milestone["tag"]
+            if tag == "a":
+                self.milestone["links"].append(a.get("href", ""))
+            if tag == "img":
+                self.milestone["images"].append(a.get("src", ""))
+        if tag == "nav" and a.get("aria-label") == "Main navigation":
+            self.in_navigation = True
+        if tag == "a" and self.in_navigation:
+            self.navigation.append(a.get("href", ""))
+            if a.get("aria-current") == "page":
+                self.navigation_current.append(a.get("href", ""))
         if tag == "figcaption":
             self.in_caption = True
         self.classes.update(a.get("class", "").split())
@@ -89,6 +116,12 @@ class Page(HTMLParser):
             self.review_journal["links"].append(a.get("href", ""))
 
     def handle_endtag(self, tag):
+        if self.milestone is not None and tag == self.milestone["tag"]:
+            self.milestone_depth -= 1
+            if self.milestone_depth == 0:
+                self.milestone = None
+        if tag == "nav":
+            self.in_navigation = False
         if tag == "figcaption":
             self.in_caption = False
         if self.publication is not None:
@@ -109,6 +142,8 @@ class Page(HTMLParser):
             self.review_section_depth -= 1
 
     def handle_data(self, data):
+        if self.milestone is not None:
+            self.milestone["text"].append(data)
         self.text.append(data)
         if self.in_caption:
             self.caption_text.append(data)
@@ -286,6 +321,48 @@ def check_requested_copy(home, publications, pages):
         assert not page.review_count_markup, f"Retired review-count markup: {page.path}"
 
 
+def check_journey(data, page):
+    date.fromisoformat(data["updated"])
+    chapters, images = data["chapters"], data["images"]
+    ids = [chapter["id"] for chapter in chapters]
+    assert ids and len(ids) == len(set(ids)), "Missing or duplicate career milestone IDs"
+    assert [item["id"] for item in page.milestones] == ids, "Rendered timeline differs from data or its order"
+    assert "journey-timeline" in page.ids, "Missing career timeline"
+    page_text = clean(" ".join(page.text))
+    for field in ("title", "intro", "years"):
+        assert clean(data[field]) in page_text, f"Missing journey {field}"
+    for image_id, photo in images.items():
+        assert all(photo.get(field) for field in ("src", "alt", "caption", "credit", "source_url")), f"Incomplete photo attribution: {image_id}"
+        assert all(type(photo[field]) is int and photo[field] > 0 for field in ("width", "height")), f"Invalid photo dimensions: {image_id}"
+        assert urlsplit(photo["source_url"]).scheme == "https", f"Invalid photo source URL: {image_id}"
+        assert not urlsplit(photo["src"]).scheme and (ROOT / photo["src"]).is_file(), f"Missing local career photo: {image_id}"
+    for image_id in data["hero_images"]:
+        assert image_id in images, f"Unknown career hero photo: {image_id}"
+        assert local_target(ROOT / "index.html", images[image_id]["src"]) in {local_target(page.path, href) for href in page.links if not urlsplit(href).scheme}, f"Missing rendered hero photo: {image_id}"
+    for chapter, rendered in zip(chapters, page.milestones):
+        key = chapter["id"]
+        assert key in page.ids and f"#{key}" in page.links, f"Missing chapter/index anchor: {key}"
+        assert rendered["year"] == str(chapter["year"]), f"Wrong milestone year: {key}"
+        text = clean(" ".join(rendered["text"]))
+        for value in [chapter["date"], chapter["category"], chapter["title"], chapter["subtitle"], *chapter["paragraphs"], *chapter["honors"]]:
+            assert clean(value) in text, f"Missing or altered career text: {key}: {value}"
+        for link in chapter["links"]:
+            url = urlsplit(link["url"])
+            assert url.scheme == "https" or (not url.scheme and not url.netloc), f"Invalid career link: {key}"
+            assert link["url"] in rendered["links"], f"Missing career link: {key}"
+            assert clean(link["label"]) in text, f"Missing career source label: {key}"
+        expected_photos = []
+        for image_id in chapter["images"]:
+            assert image_id in images, f"Unknown milestone photo: {key}: {image_id}"
+            photo = images[image_id]
+            expected_photos.append((ROOT / photo["src"]).resolve())
+            assert clean(photo["caption"]) in text and clean(photo["credit"]) in text, f"Missing displayed photo attribution: {key}"
+            assert photo["source_url"] in rendered["links"], f"Missing photo source link: {key}"
+        assert [local_target(page.path, src) for src in rendered["images"]] == expected_photos, f"Missing or incorrect milestone photos: {key}"
+    assert all("/analytics/" not in href and "/campaignmanager/" not in href for href in page.links), "Private account links must not appear in the public timeline"
+    return len(chapters)
+
+
 def main():
     pages = {}
     for path in ROOT.rglob("*.html"):
@@ -295,6 +372,11 @@ def main():
         assert all((page.lang, page.viewport, page.description, page.canonical)), f"Metadata issue: {path}"
         pages[path.resolve()] = page
     assert pages, "No public HTML pages"
+    for path, page in pages.items():
+        assert all(not urlsplit(link).scheme and not urlsplit(link).netloc for link in page.navigation), f"External link in main page navigation: {path}"
+        targets = [local_target(path, link) for link in page.navigation]
+        assert len(targets) == len(set(targets)) and set(targets) == set(pages), f"Main navigation does not cover each public page once: {path}"
+        assert len(page.navigation_current) == 1 and local_target(path, page.navigation_current[0]) == path, f"Wrong current-page navigation link: {path}"
     links_checked = 0
     for path, page in pages.items():
         for href in page.links:
@@ -302,10 +384,8 @@ def main():
             if url.scheme or url.netloc:
                 assert url.scheme in {"https", "mailto"}, f"Unexpected external link: {href}"
                 continue
-            target = (ROOT / unquote(url.path).lstrip("/") if url.path.startswith("/") else path.parent / unquote(url.path)).resolve() if url.path else path
+            target = local_target(path, href)
             assert target.is_relative_to(ROOT), f"Link escapes site: {href}"
-            if target.is_dir():
-                target /= "index.html"
             assert target.is_file(), f"Broken local link in {path}: {href}"
             if url.fragment:
                 assert target in pages and unquote(url.fragment) in pages[target].ids, f"Broken anchor: {href}"
@@ -315,9 +395,12 @@ def main():
     reviews = json.loads((ROOT / "data/peer-review.json").read_text(encoding="utf-8"))
     check_peer_review(reviews, pages[ROOT / "index.html"], pages[ROOT / "about/index.html"])
     check_requested_copy(pages[ROOT / "index.html"], pages[ROOT / "publications/index.html"], pages.values())
+    journey = json.loads((ROOT / "data/journey.json").read_text(encoding="utf-8"))
+    milestones = check_journey(journey, pages[ROOT / "journey/index.html"])
     print(f"PASS: {len(pages)} pages; {links_checked} local links and anchors; metadata and navigation.")
     print(f"PASS: {len(works)} unique works; years {dict(sorted(years.items(), reverse=True))}; complete ordered authors, DOI versions, filters, homepage metrics and BibTeX.")
     print("PASS: journal-service names, roles and links; no reviewing counts or retired page copy.")
+    print(f"PASS: {milestones} career milestones; source text, dates, photographs, credits and chapter anchors.")
 
 
 if __name__ == "__main__":
