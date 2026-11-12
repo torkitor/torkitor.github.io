@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Research software by Clemente García-Hidalgo: RadAccord for imaging preprocessing checks and DeID-Rx for pixel-level text de-identification research.">
+  <title>Software · Clemente García-Hidalgo</title>
+  <link rel="canonical" href="https://torkitor.github.io/software/">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="page">
+    <header class="site-header">
+      <span class="wordmark">CGH /</span>
+      <nav aria-label="Main navigation">
+        <a href="../">Home</a>
+        <a href="../publications/">Publications</a>
+        <a href="./" aria-current="page">Software</a>
+        <a href="../about/">About</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <h1>Software</h1>
+      <p class="subtitle">Tools for asking better questions of imaging data.</p>
+      <p class="lead">Public research projects with source code, documentation and evaluation details. Each repository describes its scope and limitations.</p>
+
+      <section aria-labelledby="projects-heading">
+        <h2 id="projects-heading">Public projects</h2>
+        <article class="entry project">
+          <p class="eyebrow">Imaging preprocessing · Python</p>
+          <h3><a href="https://github.com/torkitor/RadAccord">RadAccord <span aria-hidden="true">↗</span></a></h3>
+          <p>Checks retained source and candidate images against a declared preprocessing operation. It distinguishes sampling fidelity, coverage of the selected region of interest and the conditions for reusing measurements.</p>
+          <p>Designed to make image-processing assumptions inspectable before radiomic feature reuse. A satisfied sampling check does not imply that all features are equivalent or that a model is clinically validated.</p>
+          <div class="links-row">
+            <a href="https://github.com/torkitor/RadAccord">Source code <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/torkitor/RadAccord/blob/main/docs/INSTALL.md">Installation <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/torkitor/RadAccord/blob/main/docs/PROSPECTIVE_VALIDATION.md">Evaluation <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+        <article class="entry project">
+          <p class="eyebrow">Radiograph de-identification · Computer vision &amp; OCR</p>
+          <h3><a href="https://github.com/torkitor/hackathon-Treelogic-clemente">DeID-Rx <span aria-hidden="true">↗</span></a></h3>
+          <p>A research pipeline for detecting, reading and redacting identifying text embedded in radiograph pixels. The project combines computer vision and optical character recognition, with a separate OCR-based assessment of residual readable text.</p>
+          <p>Developed for a hackathon and evaluated using synthetic identifying text on radiographs. Generalisation to real hospital annotations requires further validation; the repository documents the evaluation setting and limitations.</p>
+          <div class="links-row">
+            <a href="https://github.com/torkitor/hackathon-Treelogic-clemente">Source code <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/torkitor/hackathon-Treelogic-clemente#readme">Documentation <span aria-hidden="true">↗</span></a>
+          </div>
+        </article>
+      </section>
+
+      <section class="contact" aria-labelledby="collaborate-heading">
+        <h2 id="collaborate-heading">Questions &amp; contributions</h2>
+        <p>For reproducible bug reports or project-specific questions, use the relevant repository. For research collaborations, <a href="mailto:clemente292@gmail.com">get in touch by email</a>.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>© 2026 Clemente García-Hidalgo</span>
+      <a href="https://github.com/torkitor">GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </div>
+</body>
+</html>
