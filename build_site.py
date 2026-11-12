@@ -29,7 +29,7 @@ def page(title, description, body, active):
     navigation = ''.join(
         f'<a href="{prefix}{target}"' + (' aria-current="page"' if label == active else '') + f'>{label}</a>'
         for label, target in [('Home', './'), ('Publications', 'publications/'), ('Software', 'software/'), ('About', 'about/')])
-    script = '<script src="../assets/publications.js" defer></script>' if active == 'Publications' else ''
+    script = '<script src="../assets/publications.js?v=20261112" defer></script>' if active == 'Publications' else ''
     return f'''<!doctype html>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@ def page(title, description, body, active):
   <meta property="og:url" content="https://torkitor.github.io/{path}">
   <meta property="og:image" content="https://torkitor.github.io/assets/portrait.jpg">
   <link rel="icon" href="{prefix}assets/favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="{prefix}assets/style.css">
+  <link rel="stylesheet" href="{prefix}assets/style.css?v=20261112">
 {script}
 </head>
 <body>
