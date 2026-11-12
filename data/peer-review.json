@@ -1,0 +1,156 @@
+{
+  "updated": "2026-11-12",
+  "source": "Springer Nature reviewer dashboard, supplied by the author",
+  "journals": [
+    {
+      "name": "Discover Computing",
+      "manuscripts": 2,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "BMC Medical Informatics and Decision Making",
+      "manuscripts": 6,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "International Journal of Computational Intelligence Systems",
+      "manuscripts": 2,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "BMC Women's Health",
+      "manuscripts": 1,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "Discover Artificial Intelligence",
+      "manuscripts": 9,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "Discover Public Health",
+      "manuscripts": 1,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "BMC Medical Imaging",
+      "manuscripts": 44,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "Discover Informatics",
+      "manuscripts": 1,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "Abdominal Radiology",
+      "manuscripts": 2,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "BMC Pediatrics",
+      "manuscripts": 1,
+      "updated": "2026-11-09"
+    },
+    {
+      "name": "Journal of King Saud University Computer and Information Sciences",
+      "manuscripts": 1,
+      "updated": "2026-11-03"
+    },
+    {
+      "name": "Discover Sensors",
+      "manuscripts": 1,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Scientific Reports",
+      "manuscripts": 20,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Physical and Engineering Sciences in Medicine",
+      "manuscripts": 1,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "International Journal of Data Science and Analytics",
+      "manuscripts": 5,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Discover Oncology",
+      "manuscripts": 1,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "BMC Medical Research Methodology",
+      "manuscripts": 4,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Discover Computer Vision",
+      "manuscripts": 1,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Discover Applied Sciences",
+      "manuscripts": 5,
+      "updated": "2026-11-02"
+    },
+    {
+      "name": "Machine Vision and Applications",
+      "manuscripts": 1,
+      "updated": "2026-10-20"
+    },
+    {
+      "name": "International Journal of Machine Learning and Cybernetics",
+      "manuscripts": 1,
+      "updated": "2026-10-17"
+    },
+    {
+      "name": "BMC Bioinformatics",
+      "manuscripts": 1,
+      "updated": "2026-10-11"
+    },
+    {
+      "name": "npj Digital Medicine",
+      "manuscripts": 4,
+      "updated": "2026-10-11"
+    },
+    {
+      "name": "BMC Medical Education",
+      "manuscripts": 7,
+      "updated": "2026-10-11"
+    },
+    {
+      "name": "Humanities and Social Sciences Communications",
+      "manuscripts": 1,
+      "updated": "2026-09-30"
+    },
+    {
+      "name": "Pediatric Radiology",
+      "manuscripts": 1,
+      "updated": "2026-09-16"
+    },
+    {
+      "name": "Journal of Ovarian Research",
+      "manuscripts": 1,
+      "updated": "2026-09-14"
+    },
+    {
+      "name": "Signal, Image and Video Processing",
+      "manuscripts": 1,
+      "updated": "2026-08-05"
+    },
+    {
+      "name": "International Journal of Colorectal Disease",
+      "manuscripts": 1,
+      "updated": "2026-08-04"
+    }
+  ],
+  "additional_journals": [
+    "JMIR",
+    "Insights into Imaging",
+    "European Radiology Experimental"
+  ]
+}

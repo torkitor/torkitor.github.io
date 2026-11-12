@@ -19,14 +19,17 @@ Open http://127.0.0.1:8765/ to preview. Commit the generated files alongside the
 source changes; GitHub Pages serves those files directly and does not run Python.
 
 - `data/publications.json`: curated bibliography and public source URLs.
-- `build_site.py`: home-page content, publication rendering and BibTeX generation.
+- `data/peer-review.json`: journal-level reviewing counts and their source dates.
+- `build_site.py`: home-page content, publication rendering, BibTeX generation
+  and the generated peer-review section on About.
 - `index.html`, `publications/index.html`, `publications/publications.bib`:
   generated outputs. Edit their sources above and rebuild.
-- `about/index.html`: education, professional service and distinctions.
+- `about/index.html`: education, professional service and distinctions. Keep the
+  peer-review block's generation markers intact; edit its data and rebuild.
 - `software/index.html`: public research projects.
 - `assets/style.css`: shared layout and responsive styles.
 - `assets/publications.js`: search, year, topic and first-author filters.
-- `assets/portrait.jpg`: professional portrait.
+- `assets/portrait.jpg`: portrait supplied by the author.
 
 The generated pages share navigation in `build_site.py`. About and Software
 retain their own navigation and footer; update those too if the site structure
@@ -56,6 +59,21 @@ Counts represent unique journal publications, including the identified
 publication types. Translations count once. Conference abstracts, repository
 software/data deposits, preprints and unpublished manuscripts are excluded.
 No citation-count, h-index or journal-impact metrics are inferred.
+
+## Maintain the reviewing record
+
+`data/peer-review.json` records counts supplied by the author from the Springer
+Nature reviewer dashboard. The 12 November 2026 snapshot contains 127 reviewed
+manuscripts across 29 journals. Each journal's `updated` date records the source's
+last update, not the date on which all of its reviews took place.
+
+Keep unquantified service in `additional_journals`. JMIR, Insights into Imaging
+and European Radiology Experimental are listed there because their counts were
+not supplied; they are excluded from the 127-manuscript total. The record is
+author-provided, and the underlying review certificates have not been
+independently verified. Do not infer review rounds, acceptance decisions or
+additional totals from these data. Rebuild after changing the record; the
+About section is generated between its existing HTML markers.
 
 ## Validation
 
@@ -99,12 +117,16 @@ completed qualifications.
 - [Bellvitge: ESNR award and doctoral research](https://bellvitgehospital.cat/es/actualidad/noticia/la-esnr-premia-una-investigacion-sobre-tumores-cerebrales-dirigida-por-el-equipo).
 - [Radiology: AI trainee editorial board announcement](https://radiologyai.substack.com/p/welcome-to-our-newest-trainee-editorial).
 - [European Radiology 2026 fellows](https://journals.myesr.org/eur-radiol/news/new-year-new-fellows-welcome-the-recipients-of-yves-menu-review-fellowships-2026/):
-  professional headshot, identified by the adjacent biography.
-  [Original portrait](https://journals.myesr.org/eur-radiol/wp-content/uploads/sites/2/migrated/2025/12/Garcia-Hidalgo-1-300x300.jpg).
-  The photograph retains its existing rights.
+  source for the Yves Menu Review Fellowship.
+- The current portrait comes from the author's supplied 1280 × 853 photograph,
+  replacing the earlier headshot sourced from the fellowship announcement.
+- Peer-review counts and additional reviewing service were supplied by the
+  author on 12 November 2026; provenance is retained in `data/peer-review.json`.
 - Public repository READMEs linked from the Software page.
 
-The layout is inspired by [Swann Bessa's academic website](https://swannbessa.github.io/).
-The implementation and personal content were prepared independently. No
-institutional logos, unpublished manuscripts or private repository contents
-are included.
+The current editorial design takes inspiration from the
+[Inspora website gallery](https://www.inspora.design/websites), including the
+Brikken + Co reference viewed there. The first layout was inspired by
+[Swann Bessa's academic website](https://swannbessa.github.io/). The implementation
+and personal content were prepared independently. No institutional logos,
+unpublished manuscripts or private repository contents are included.

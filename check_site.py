@@ -1,4 +1,4 @@
-"""Validate the static site and generated bibliography using only the stdlib."""
+"""Validate the static site and generated publication/review records with the stdlib."""
 from collections import Counter
 from datetime import date
 from html.parser import HTMLParser
@@ -24,6 +24,10 @@ class Page(HTMLParser):
         self.publication = self.select = self.metric = None
         self.metric_depth = self.strong_depth = 0
         self.in_details = False
+        self.review_text, self.review_rows = [], []
+        self.review_markers = {"data-review-total": [], "data-review-journals": []}
+        self.review_section_depth = self.review_marker_depth = 0
+        self.review_marker = self.review_row = self.review_count = None
 
     def handle_starttag(self, tag, attrs):
         a = dict(attrs)
@@ -64,6 +68,32 @@ class Page(HTMLParser):
             self.metrics[self.metric] = []
         if self.metric:
             self.metric_depth += 1
+        if tag == "section" and a.get("id") == "peer-review":
+            assert not self.review_section_depth, f"Nested peer-review section: {self.path}"
+            self.review_section_depth = 1
+        elif tag == "section" and self.review_section_depth:
+            self.review_section_depth += 1
+        for marker in self.review_markers:
+            if marker in a:
+                assert self.review_section_depth, f"Review metric outside its section: {self.path}"
+                assert self.review_marker is None, f"Nested review metrics: {self.path}"
+                capture = []
+                self.review_markers[marker].append(capture)
+                self.review_marker = (tag, capture)
+                self.review_marker_depth = 0
+        if self.review_marker and tag == self.review_marker[0]:
+            self.review_marker_depth += 1
+        if tag == "tr" and "data-review-journal" in a:
+            assert self.review_section_depth, f"Review table outside its section: {self.path}"
+            assert self.review_row is None, f"Nested review table rows: {self.path}"
+            self.review_row = {"name": a["data-review-journal"], "text": [], "counts": [], "dates": []}
+            self.review_rows.append(self.review_row)
+        if self.review_row is not None:
+            if tag == "td" and "review-count" in a.get("class", "").split():
+                self.review_count = []
+                self.review_row["counts"].append(self.review_count)
+            if tag == "time":
+                self.review_row["dates"].append(a.get("datetime"))
 
     def handle_endtag(self, tag):
         if self.publication is not None:
@@ -78,6 +108,16 @@ class Page(HTMLParser):
             self.metric_depth -= 1
             if self.metric_depth == 0:
                 self.metric = None
+        if self.review_marker and tag == self.review_marker[0]:
+            self.review_marker_depth -= 1
+            if self.review_marker_depth == 0:
+                self.review_marker = None
+        if tag == "td":
+            self.review_count = None
+        if tag == "tr":
+            self.review_row = None
+        if tag == "section" and self.review_section_depth:
+            self.review_section_depth -= 1
 
     def handle_data(self, data):
         if self.publication is not None:
@@ -88,6 +128,14 @@ class Page(HTMLParser):
                 self.publication["details"].append(data)
         if self.metric:
             self.metrics[self.metric].append(data)
+        if self.review_section_depth:
+            self.review_text.append(data)
+        if self.review_marker:
+            self.review_marker[1].append(data)
+        if self.review_row is not None:
+            self.review_row["text"].append(data)
+        if self.review_count is not None:
+            self.review_count.append(data)
 
 
 def validate_data(catalog):
@@ -187,6 +235,50 @@ def check_catalog(catalog, page, home, bib):
     return works, years
 
 
+def check_peer_review(records, home, about):
+    updated = date.fromisoformat(records["updated"])
+    assert records.get("source", "").strip(), "Missing peer-review source attribution"
+    journals, additional = records["journals"], records["additional_journals"]
+    assert journals, "Empty peer-review journal list"
+    names = set()
+    for journal in journals:
+        name, count = journal["name"], journal["manuscripts"]
+        assert isinstance(name, str) and clean(name), "Missing review journal name"
+        key = clean(name).casefold()
+        assert key not in names, f"Duplicate peer-review journal: {name}"
+        names.add(key)
+        assert type(count) is int and count >= 0, f"Invalid manuscript count: {name}"
+        assert date.fromisoformat(journal["updated"]) <= updated, f"Future review journal date: {name}"
+    for name in additional:
+        assert isinstance(name, str) and clean(name), "Additional journals must be names without counts"
+        key = clean(name).casefold()
+        assert key not in names, f"Duplicate or already-counted additional journal: {name}"
+        names.add(key)
+    total = sum(journal["manuscripts"] for journal in journals)
+    expected_metrics = {"data-review-total": total, "data-review-journals": len(journals)}
+    for page in (home, about):
+        assert "peer-review" in page.ids, f"Missing peer-review section: {page.path}"
+        for marker, number in expected_metrics.items():
+            captures = page.review_markers[marker]
+            assert len(captures) == 1, f"Missing/duplicate {marker}: {page.path}"
+            assert clean("".join(captures[0])) == str(number), f"Review metric disagrees with counted journal data: {marker}, {page.path}"
+    assert "about/#peer-review" in home.links, "Missing homepage link to peer-review details"
+    expected = {journal["name"]: journal for journal in journals}
+    rendered = [row["name"] for row in about.review_rows]
+    assert len(rendered) == len(set(rendered)), "Duplicate rendered peer-review journal"
+    assert set(rendered) == set(expected), "Peer-review table differs from counted journal data"
+    for row in about.review_rows:
+        journal = expected[row["name"]]
+        assert clean(journal["name"]) in clean(" ".join(row["text"])), f"Missing displayed review journal: {journal['name']}"
+        assert len(row["counts"]) == 1, f"Missing/duplicate manuscript count cell: {journal['name']}"
+        assert clean("".join(row["counts"][0])) == str(journal["manuscripts"]), f"Wrong displayed manuscript count: {journal['name']}"
+        assert row["dates"] == [journal["updated"]], f"Wrong displayed review date: {journal['name']}"
+    review_text = clean(" ".join(about.review_text))
+    for name in additional:
+        assert clean(name) in review_text, f"Missing additional review journal: {name}"
+    return total, len(journals), len(additional)
+
+
 def main():
     pages = {}
     for path in ROOT.rglob("*.html"):
@@ -213,8 +305,11 @@ def main():
             links_checked += 1
     catalog = json.loads((ROOT / "data/publications.json").read_text(encoding="utf-8"))
     works, years = check_catalog(catalog, pages[ROOT / "publications/index.html"], pages[ROOT / "index.html"], (ROOT / "publications/publications.bib").read_text(encoding="utf-8"))
+    reviews = json.loads((ROOT / "data/peer-review.json").read_text(encoding="utf-8"))
+    total, counted, additional = check_peer_review(reviews, pages[ROOT / "index.html"], pages[ROOT / "about/index.html"])
     print(f"PASS: {len(pages)} pages; {links_checked} local links and anchors; metadata and navigation.")
     print(f"PASS: {len(works)} unique works; years {dict(sorted(years.items(), reverse=True))}; complete ordered authors, DOI versions, filters, homepage metrics and BibTeX.")
+    print(f"PASS: {total} manuscript reviews across {counted} counted journals; {additional} additional journals excluded from totals; homepage/About metrics, complete table counts and dates.")
 
 
 if __name__ == "__main__":
