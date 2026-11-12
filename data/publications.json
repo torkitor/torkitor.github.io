@@ -1,0 +1,1479 @@
+{
+  "updated": "2026-11-12",
+  "scope": "26 unique published journal works, including research articles, letters, perspectives, a review and a case report. Spanish and English editions are grouped as single works; preprint versions and conference abstracts are excluded. Publication years follow first public availability rather than later issue assignment. Bibliographic records checked against PubMed, ORCID and publisher-deposited Crossref metadata.",
+  "works": [
+    {
+      "doi": "10.2196/106199",
+      "doi_aliases": [],
+      "pmid": "42954916",
+      "title": "Construct Validity of Frontier Large Language Models on 4 Spanish Health Professions Specialty-Access Examinations (MIR, EIR, PIR, and FIR): Cross-Sectional Benchmarking and Psychometric Study",
+      "journal": "JMIR Medical Education",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Manuel",
+          "family": "Carpio-Salmerón",
+          "name": "Manuel Carpio-Salmerón",
+          "self": false
+        },
+        {
+          "given": "Pau",
+          "family": "Benito",
+          "name": "Pau Benito",
+          "self": false
+        },
+        {
+          "given": "Carlos",
+          "family": "Carazo-Casas",
+          "name": "Carlos Carazo-Casas",
+          "self": false
+        },
+        {
+          "given": "Beatriz",
+          "family": "Carratalá",
+          "name": "Beatriz Carratalá",
+          "self": false
+        },
+        {
+          "given": "Jaime",
+          "family": "Campos Pavón",
+          "name": "Jaime Campos Pavón",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-10-29",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "12",
+      "issue": null,
+      "pages": "e106199",
+      "topics": [
+        "Medical education",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.2196/106199",
+        "https://pubmed.ncbi.nlm.nih.gov/42954916/",
+        "https://api.crossref.org/works/10.2196/106199"
+      ]
+    },
+    {
+      "doi": "10.1007/s10278-026-02421-0",
+      "doi_aliases": [],
+      "pmid": "42875689",
+      "title": "SynPAR for Empirical Membership Inference Auditing of Synthetic Radiomic and Embedding Data",
+      "journal": "Journal of Imaging Informatics in Medicine",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-10-14",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": true,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s10278-026-02421-0",
+        "https://pubmed.ncbi.nlm.nih.gov/42875689/",
+        "https://api.crossref.org/works/10.1007/s10278-026-02421-0"
+      ]
+    },
+    {
+      "doi": "10.1007/s00330-026-12932-7",
+      "doi_aliases": [],
+      "pmid": "42844394",
+      "title": "Lifting the radiomics performance ceiling: how preprocessing leakage amplifies model multiplicity",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-10-07",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-026-12932-7",
+        "https://pubmed.ncbi.nlm.nih.gov/42844394/",
+        "https://api.crossref.org/works/10.1007/s00330-026-12932-7"
+      ]
+    },
+    {
+      "doi": "10.1007/s10278-026-02360-w",
+      "doi_aliases": [],
+      "pmid": "42823570",
+      "title": "Validating Radiomic Feature Comparisons with Patient-Specific Image Surrogates",
+      "journal": "Journal of Imaging Informatics in Medicine",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-10-01",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": true,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s10278-026-02360-w",
+        "https://pubmed.ncbi.nlm.nih.gov/42823570/",
+        "https://api.crossref.org/works/10.1007/s10278-026-02360-w"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ejrad.2026.113218",
+      "doi_aliases": [],
+      "pmid": "42721920",
+      "title": "Dynamic susceptibility contrast perfusion-weighted imaging (DSC-PWI) vascular and metabolic biomarkers for presurgical diagnosis of adult brain tumors across different acquisition parameters",
+      "journal": "European Journal of Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Pablo",
+          "family": "Naval-Baudin",
+          "name": "Pablo Naval-Baudin",
+          "self": false
+        },
+        {
+          "given": "Juan Ignacio",
+          "family": "García-García",
+          "name": "Juan Ignacio García-García",
+          "self": false
+        },
+        {
+          "given": "Mildred",
+          "family": "Viveros-Castaño",
+          "name": "Mildred Viveros-Castaño",
+          "self": false
+        },
+        {
+          "given": "Diego",
+          "family": "Choque",
+          "name": "Diego Choque",
+          "self": false
+        },
+        {
+          "given": "Gerard",
+          "family": "Plans",
+          "name": "Gerard Plans",
+          "self": false
+        },
+        {
+          "given": "Noemi",
+          "family": "Vidal",
+          "name": "Noemi Vidal",
+          "self": false
+        },
+        {
+          "given": "Monica",
+          "family": "Cos",
+          "name": "Monica Cos",
+          "self": false
+        },
+        {
+          "given": "Jordi",
+          "family": "Bruna",
+          "name": "Jordi Bruna",
+          "self": false
+        },
+        {
+          "given": "Carles",
+          "family": "Majos",
+          "name": "Carles Majos",
+          "self": false
+        },
+        {
+          "given": "Ignacio",
+          "family": "Martínez-Zalacaín",
+          "name": "Ignacio Martínez-Zalacaín",
+          "self": false
+        },
+        {
+          "given": "Albert",
+          "family": "Pons-Escoda",
+          "name": "Albert Pons-Escoda",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-09-06",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "205",
+      "issue": null,
+      "pages": "113218",
+      "topics": [
+        "Neuroimaging",
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.ejrad.2026.113218",
+        "https://pubmed.ncbi.nlm.nih.gov/42721920/",
+        "https://api.crossref.org/works/10.1016/j.ejrad.2026.113218"
+      ]
+    },
+    {
+      "doi": "10.1016/j.rx.2026.501906",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Percepción del impacto de la Inteligencia Artificial en la Radiología entre estudiantes de Medicina, médicos jóvenes y especialistas en España: estudio transversal basado en una encuesta",
+      "journal": "Radiología",
+      "authors": [
+        {
+          "given": "M.",
+          "family": "Isla-Jover",
+          "name": "M. Isla-Jover",
+          "self": false
+        },
+        {
+          "given": "V.",
+          "family": "Moratalla-Sasu",
+          "name": "V. Moratalla-Sasu",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "C.",
+          "family": "Carazo Casas",
+          "name": "C. Carazo Casas",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-09",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": null,
+      "issue": null,
+      "pages": "501906",
+      "topics": [
+        "Medical AI",
+        "Medical education"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.rx.2026.501906",
+        "https://api.crossref.org/works/10.1016/j.rx.2026.501906",
+        "https://orcid.org/0009-0001-6672-2714"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ijmedinf.2026.106676",
+      "doi_aliases": [],
+      "pmid": "42664732",
+      "title": "Clinician-led, AI-assisted clinical software development: multi-domain verification of a deployed ePROM application",
+      "journal": "International Journal of Medical Informatics",
+      "authors": [
+        {
+          "given": "Alberto Zambudio",
+          "family": "Munuera",
+          "name": "Alberto Zambudio Munuera",
+          "self": false
+        },
+        {
+          "given": "Miguel Ángel",
+          "family": "Arrabal Polo",
+          "name": "Miguel Ángel Arrabal Polo",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Rodrigo España",
+          "family": "Navarro",
+          "name": "Rodrigo España Navarro",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-08-27",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "221",
+      "issue": null,
+      "pages": "106676",
+      "topics": [
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.ijmedinf.2026.106676",
+        "https://pubmed.ncbi.nlm.nih.gov/42664732/",
+        "https://api.crossref.org/works/10.1016/j.ijmedinf.2026.106676"
+      ]
+    },
+    {
+      "doi": "10.1016/j.cmpb.2026.109616",
+      "doi_aliases": [],
+      "pmid": "42659807",
+      "title": "Discriminative optimization erases biological relational structure in radiomic feature selection: A multi-objective analysis",
+      "journal": "Computer Methods and Programs in Biomedicine",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        },
+        {
+          "given": "Gonzalo",
+          "family": "Pagán Vicente",
+          "name": "Gonzalo Pagán Vicente",
+          "self": false
+        },
+        {
+          "given": "Juan Francisco",
+          "family": "Mula Ponce",
+          "name": "Juan Francisco Mula Ponce",
+          "self": false
+        },
+        {
+          "given": "Ángel",
+          "family": "Vázquez Olmos",
+          "name": "Ángel Vázquez Olmos",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-08-20",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "286",
+      "issue": null,
+      "pages": "109616",
+      "topics": [
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.cmpb.2026.109616",
+        "https://pubmed.ncbi.nlm.nih.gov/42659807/",
+        "https://api.crossref.org/works/10.1016/j.cmpb.2026.109616"
+      ]
+    },
+    {
+      "doi": "10.1007/s00330-026-12747-6",
+      "doi_aliases": [],
+      "pmid": "42446632",
+      "title": "Letter to the Editor: Late gadolinium enhancement synthesis from cardiac cine MRI: physical, methodological, and editorial considerations",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-07-14",
+      "category": "letter",
+      "first_author": true,
+      "sole_author": true,
+      "volume": "36",
+      "issue": "10",
+      "pages": "7468–7470",
+      "topics": [
+        "Medical AI",
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-026-12747-6",
+        "https://pubmed.ncbi.nlm.nih.gov/42446632/",
+        "https://api.crossref.org/works/10.1007/s00330-026-12747-6"
+      ]
+    },
+    {
+      "doi": "10.1007/s00330-026-12729-8",
+      "doi_aliases": [],
+      "pmid": "42426246",
+      "title": "The cult of the external validation set: undertraining is only half of the radiomics validation crisis",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-07-09",
+      "category": "letter",
+      "first_author": true,
+      "sole_author": true,
+      "volume": "36",
+      "issue": "9",
+      "pages": "6963–6965",
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-026-12729-8",
+        "https://pubmed.ncbi.nlm.nih.gov/42426246/",
+        "https://api.crossref.org/works/10.1007/s00330-026-12729-8"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ejrad.2026.113058",
+      "doi_aliases": [],
+      "pmid": "42435572",
+      "title": "Article 4 and Article 72 in radiological practice: competence and surveillance beyond compliance",
+      "journal": "European Journal of Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-07-08",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": true,
+      "volume": "203",
+      "issue": null,
+      "pages": "113058",
+      "topics": [
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.ejrad.2026.113058",
+        "https://pubmed.ncbi.nlm.nih.gov/42435572/",
+        "https://api.crossref.org/works/10.1016/j.ejrad.2026.113058"
+      ]
+    },
+    {
+      "doi": "10.1007/s10278-026-02107-7",
+      "doi_aliases": [],
+      "pmid": "42414718",
+      "title": "Embedding Anisotropy in Medical Image Foundation Models: Post Hoc Whitening Degradation and Spectral-Aware Standardization",
+      "journal": "Journal of Imaging Informatics in Medicine",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-07-07",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": true,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s10278-026-02107-7",
+        "https://pubmed.ncbi.nlm.nih.gov/42414718/",
+        "https://api.crossref.org/works/10.1007/s10278-026-02107-7"
+      ]
+    },
+    {
+      "doi": "10.3389/fendo.2026.1863739",
+      "doi_aliases": [],
+      "pmid": "42518536",
+      "title": "Preoperative risk score for malignancy in Bethesda III thyroid nodules: a multicentre retrospective study",
+      "journal": "Frontiers in Endocrinology",
+      "authors": [
+        {
+          "given": "Manuel",
+          "family": "Carpio-Salmerón",
+          "name": "Manuel Carpio-Salmerón",
+          "self": false
+        },
+        {
+          "given": "Mariano",
+          "family": "Tébar-Caballero",
+          "name": "Mariano Tébar-Caballero",
+          "self": false
+        },
+        {
+          "given": "Pau",
+          "family": "Benito",
+          "name": "Pau Benito",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Georgios",
+          "family": "Kyriakos",
+          "name": "Georgios Kyriakos",
+          "self": false
+        },
+        {
+          "given": "Antonio",
+          "family": "Ríos-Vergara",
+          "name": "Antonio Ríos-Vergara",
+          "self": false
+        },
+        {
+          "given": "Ginés",
+          "family": "Luengo-Gil",
+          "name": "Ginés Luengo-Gil",
+          "self": false
+        },
+        {
+          "given": "Carlos",
+          "family": "Carazo-Casas",
+          "name": "Carlos Carazo-Casas",
+          "self": false
+        },
+        {
+          "given": "Ana",
+          "family": "Casas-Miras",
+          "name": "Ana Casas-Miras",
+          "self": false
+        },
+        {
+          "given": "Luis",
+          "family": "Marín-Martínez",
+          "name": "Luis Marín-Martínez",
+          "self": false
+        },
+        {
+          "given": "Ana Belén",
+          "family": "Arroyo",
+          "name": "Ana Belén Arroyo",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-07-06",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "17",
+      "issue": null,
+      "pages": "1863739",
+      "topics": [
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.3389/fendo.2026.1863739",
+        "https://pubmed.ncbi.nlm.nih.gov/42518536/",
+        "https://api.crossref.org/works/10.3389/fendo.2026.1863739"
+      ]
+    },
+    {
+      "doi": "10.1007/s00146-026-03154-y",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Can artificial intelligence generate scientific knowledge? Pre-theoretical knowledge without epistemic agency",
+      "journal": "AI & SOCIETY",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-06-27",
+      "category": "perspective",
+      "first_author": true,
+      "sole_author": true,
+      "volume": "41",
+      "issue": "9",
+      "pages": "8509–8524",
+      "topics": [
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00146-026-03154-y",
+        "https://api.crossref.org/works/10.1007/s00146-026-03154-y",
+        "https://link.springer.com/article/10.1007/s00146-026-03154-y"
+      ]
+    },
+    {
+      "doi": "10.1007/s00330-026-12703-4",
+      "doi_aliases": [],
+      "pmid": "42321417",
+      "title": "Quality metrics of synthetic radiomics data do not predict improvement under simulated external validation: an ecological fallacy across 50 public datasets",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        },
+        {
+          "given": "Gonzalo",
+          "family": "Pagán Vicente",
+          "name": "Gonzalo Pagán Vicente",
+          "self": false
+        },
+        {
+          "given": "Juan Francisco",
+          "family": "Mula Ponce",
+          "name": "Juan Francisco Mula Ponce",
+          "self": false
+        },
+        {
+          "given": "Ángel",
+          "family": "Vázquez Olmos",
+          "name": "Ángel Vázquez Olmos",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-06-20",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "36",
+      "issue": "11",
+      "pages": "8162–8174",
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-026-12703-4",
+        "https://pubmed.ncbi.nlm.nih.gov/42321417/",
+        "https://api.crossref.org/works/10.1007/s00330-026-12703-4"
+      ]
+    },
+    {
+      "doi": "10.2214/ajr.26.35096",
+      "doi_aliases": [],
+      "pmid": "42308087",
+      "title": "The Quality of Radiology Artificial Intelligence Research: Point—P-Hacking, Analytic Flexibility, and Erosion of the Evidence Base",
+      "journal": "American Journal of Roentgenology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Albert",
+          "family": "Pons-Escoda",
+          "name": "Albert Pons-Escoda",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-06-17",
+      "category": "perspective",
+      "first_author": true,
+      "sole_author": false,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Medical AI",
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.2214/ajr.26.35096",
+        "https://pubmed.ncbi.nlm.nih.gov/42308087/",
+        "https://api.crossref.org/works/10.2214/ajr.26.35096"
+      ]
+    },
+    {
+      "doi": "10.6018/edumed.716401",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Frontier Large Language Models on the 2026 Spanish MIR Examination: A Multimodal Cross-Sectional Evaluation",
+      "journal": "Spanish Journal of Medical Education",
+      "authors": [
+        {
+          "given": "Manuel",
+          "family": "Carpio Salmerón",
+          "name": "Manuel Carpio Salmerón",
+          "self": false
+        },
+        {
+          "given": "Carlos",
+          "family": "Carazo-Casas",
+          "name": "Carlos Carazo-Casas",
+          "self": false
+        },
+        {
+          "given": "Pau",
+          "family": "Benito",
+          "name": "Pau Benito",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Jesús",
+          "family": "Alonso-Carrillo",
+          "name": "Jesús Alonso-Carrillo",
+          "self": false
+        },
+        {
+          "given": "Beatriz",
+          "family": "Carratalá",
+          "name": "Beatriz Carratalá",
+          "self": false
+        },
+        {
+          "given": "Georgios",
+          "family": "Kyriakos",
+          "name": "Georgios Kyriakos",
+          "self": false
+        },
+        {
+          "given": "Pablo",
+          "family": "González-Castro",
+          "name": "Pablo González-Castro",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-06",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "7",
+      "issue": "4",
+      "pages": null,
+      "topics": [
+        "Medical education",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.6018/edumed.716401",
+        "https://api.crossref.org/works/10.6018/edumed.716401",
+        "https://revistas.um.es/edumed/article/view/716401",
+        "https://orcid.org/0009-0001-6672-2714"
+      ]
+    },
+    {
+      "doi": "10.1007/s11060-026-05658-5",
+      "doi_aliases": [],
+      "pmid": "42213292",
+      "title": "Candidate MRI biomarkers for CD79B status in primary CNS lymphoma: an exploratory radiogenomic analysis of the UCSF-PCNSL cohort",
+      "journal": "Journal of Neuro-Oncology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Audena María",
+          "family": "García Kempf",
+          "name": "Audena María García Kempf",
+          "self": false
+        },
+        {
+          "given": "David",
+          "family": "Galdo Galián",
+          "name": "David Galdo Galián",
+          "self": false
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-05-29",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "178",
+      "issue": "1",
+      "pages": "33",
+      "topics": [
+        "Neuroimaging",
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s11060-026-05658-5",
+        "https://pubmed.ncbi.nlm.nih.gov/42213292/",
+        "https://api.crossref.org/works/10.1007/s11060-026-05658-5"
+      ]
+    },
+    {
+      "doi": "10.1016/j.ejrad.2026.112890",
+      "doi_aliases": [],
+      "pmid": "42114379",
+      "title": "Decomposing performance inflation in radiomics: factorial quantification of analytical leakage",
+      "journal": "European Journal of Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Jose Antonio",
+          "family": "Consentino Hernández",
+          "name": "Jose Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "Jose Vicente",
+          "family": "Cayuela Espí",
+          "name": "Jose Vicente Cayuela Espí",
+          "self": false
+        },
+        {
+          "given": "Gonzalo",
+          "family": "Pagán Vicente",
+          "name": "Gonzalo Pagán Vicente",
+          "self": false
+        },
+        {
+          "given": "Juan Francisco",
+          "family": "Mula Ponce",
+          "name": "Juan Francisco Mula Ponce",
+          "self": false
+        },
+        {
+          "given": "Angel",
+          "family": "Vázquez Olmos",
+          "name": "Angel Vázquez Olmos",
+          "self": false
+        },
+        {
+          "given": "Juana María",
+          "family": "Plasencia Martínez",
+          "name": "Juana María Plasencia Martínez",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-05-04",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "201",
+      "issue": null,
+      "pages": "112890",
+      "topics": [
+        "Radiomics & methods",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.ejrad.2026.112890",
+        "https://pubmed.ncbi.nlm.nih.gov/42114379/",
+        "https://api.crossref.org/works/10.1016/j.ejrad.2026.112890"
+      ]
+    },
+    {
+      "doi": "10.1016/j.patol.2026.100861",
+      "doi_aliases": [],
+      "pmid": "41747301",
+      "title": "Holopath-VR 360-degree virtual reality videos in pathology education: The Holopath-VR experience",
+      "journal": "Revista Española de Patología",
+      "authors": [
+        {
+          "given": "Eduardo",
+          "family": "Alcaraz-Mateos",
+          "name": "Eduardo Alcaraz-Mateos",
+          "self": false
+        },
+        {
+          "given": "Isabel",
+          "family": "Abellan-Leante",
+          "name": "Isabel Abellan-Leante",
+          "self": false
+        },
+        {
+          "given": "Franco Stefano",
+          "family": "Galdame",
+          "name": "Franco Stefano Galdame",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Marta",
+          "family": "Perez-La-Encina",
+          "name": "Marta Perez-La-Encina",
+          "self": false
+        },
+        {
+          "given": "Fuensanta",
+          "family": "Caballero-Aleman",
+          "name": "Fuensanta Caballero-Aleman",
+          "self": false
+        },
+        {
+          "given": "Nicolas",
+          "family": "Sanchez-Campoy",
+          "name": "Nicolas Sanchez-Campoy",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-02-26",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "59",
+      "issue": "2",
+      "pages": "100861",
+      "topics": [
+        "Medical education"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.patol.2026.100861",
+        "https://pubmed.ncbi.nlm.nih.gov/41747301/",
+        "https://api.crossref.org/works/10.1016/j.patol.2026.100861"
+      ]
+    },
+    {
+      "doi": "10.6018/edumed.700861",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Research during radiology residency: an educational need, a professional responsibility, and an institutional duty",
+      "journal": "Spanish Journal of Medical Education",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-02",
+      "category": "opinion",
+      "first_author": true,
+      "sole_author": true,
+      "volume": "7",
+      "issue": "2",
+      "pages": null,
+      "topics": [
+        "Medical education"
+      ],
+      "sources": [
+        "https://doi.org/10.6018/edumed.700861",
+        "https://api.crossref.org/works/10.6018/edumed.700861",
+        "https://revistas.um.es/edumed/article/view/700861",
+        "https://orcid.org/0009-0001-6672-2714"
+      ]
+    },
+    {
+      "doi": "10.6018/edumed.695571",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Large language model-assisted structured reporting in Radiology residents: an implementation pilot study in Emergency Radiology",
+      "journal": "Spanish Journal of Medical Education",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        },
+        {
+          "given": "Gonzalo",
+          "family": "Pagán Vicente",
+          "name": "Gonzalo Pagán Vicente",
+          "self": false
+        },
+        {
+          "given": "Juana María",
+          "family": "Plasencia Martínez",
+          "name": "Juana María Plasencia Martínez",
+          "self": false
+        },
+        {
+          "given": "Ana",
+          "family": "Blanco Barrio",
+          "name": "Ana Blanco Barrio",
+          "self": false
+        },
+        {
+          "given": "Gloria",
+          "family": "Pérez Hernández",
+          "name": "Gloria Pérez Hernández",
+          "self": false
+        },
+        {
+          "given": "Ana",
+          "family": "Moreno Pastor",
+          "name": "Ana Moreno Pastor",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-01",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "7",
+      "issue": "1",
+      "pages": null,
+      "topics": [
+        "Medical education",
+        "Medical AI"
+      ],
+      "sources": [
+        "https://doi.org/10.6018/edumed.695571",
+        "https://api.crossref.org/works/10.6018/edumed.695571",
+        "https://revistas.um.es/edumed/article/view/695571",
+        "https://orcid.org/0009-0001-6672-2714"
+      ]
+    },
+    {
+      "doi": "10.24875/aji.25000013",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "European diplomas in radiology: how, where, and why?",
+      "journal": "Austral Journal of Imaging",
+      "authors": [
+        {
+          "given": "Hugo",
+          "family": "González-González",
+          "name": "Hugo González-González",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Olatz",
+          "family": "Sáenz-de Argadoña",
+          "name": "Olatz Sáenz-de Argadoña",
+          "self": false
+        },
+        {
+          "given": "Ana",
+          "family": "Castell-Herrera",
+          "name": "Ana Castell-Herrera",
+          "self": false
+        }
+      ],
+      "year": 2025,
+      "sort_date": "2025-11",
+      "category": "review",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "32",
+      "issue": "1",
+      "pages": "45–50",
+      "topics": [
+        "Medical education"
+      ],
+      "sources": [
+        "https://doi.org/10.24875/aji.25000013",
+        "https://api.crossref.org/works/10.24875/aji.25000013",
+        "https://www.scielo.cl/article_plus.php?lng=es&pid=S2810-708X2026000100045&tlng=en",
+        "https://orcid.org/0009-0001-6672-2714"
+      ],
+      "note": "First available online in 2025; subsequently included in volume 32, issue 1 (2026). Counted once under its first publication year.",
+      "citation_year": 2026
+    },
+    {
+      "doi": "10.1016/j.rxeng.2024.11.006",
+      "doi_aliases": [
+        "10.1016/j.rx.2024.11.004"
+      ],
+      "pmid": "40412853",
+      "title": "Acute abdomen secondary to torsion of a wandering spleen",
+      "journal": "Radiología (English Edition)",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "M",
+          "family": "Abellán López",
+          "name": "M Abellán López",
+          "self": false
+        },
+        {
+          "given": "J M",
+          "family": "Plasencia Martínez",
+          "name": "J M Plasencia Martínez",
+          "self": false
+        }
+      ],
+      "year": 2025,
+      "sort_date": "2025-01",
+      "category": "case_report",
+      "first_author": true,
+      "sole_author": false,
+      "volume": "67",
+      "issue": "3",
+      "pages": "395–398",
+      "topics": [
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.rxeng.2024.11.006",
+        "https://pubmed.ncbi.nlm.nih.gov/40412853/",
+        "https://api.crossref.org/works/10.1016/j.rx.2024.11.004",
+        "https://orcid.org/0009-0001-6672-2714"
+      ],
+      "note": "Spanish original and English edition have separate DOI records. Both versions are grouped as one 2025 publication."
+    },
+    {
+      "doi": "10.1016/j.rxeng.2025.01.001",
+      "doi_aliases": [
+        "10.1016/j.rx.2024.01.007"
+      ],
+      "pmid": "40412841",
+      "title": "A commercial AI tool untrained for COVID-19 demonstrates slight improvement in the interpretation of COVID-19 pneumonia x-rays, especially among inexperienced readers",
+      "journal": "Radiología (English Edition)",
+      "authors": [
+        {
+          "given": "M",
+          "family": "Pérez Laencina",
+          "name": "M Pérez Laencina",
+          "self": false
+        },
+        {
+          "given": "J M",
+          "family": "Plasencia Martínez",
+          "name": "J M Plasencia Martínez",
+          "self": false
+        },
+        {
+          "given": "M",
+          "family": "Sánchez Canales",
+          "name": "M Sánchez Canales",
+          "self": false
+        },
+        {
+          "given": "C",
+          "family": "Jiménez Pulido",
+          "name": "C Jiménez Pulido",
+          "self": false
+        },
+        {
+          "given": "R",
+          "family": "Rodríguez Mondéjar",
+          "name": "R Rodríguez Mondéjar",
+          "self": false
+        },
+        {
+          "given": "L",
+          "family": "Martínez Encarnación",
+          "name": "L Martínez Encarnación",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "D",
+          "family": "Galdo Galián",
+          "name": "D Galdo Galián",
+          "self": false
+        },
+        {
+          "given": "P",
+          "family": "Hernández Madrid",
+          "name": "P Hernández Madrid",
+          "self": false
+        },
+        {
+          "given": "L",
+          "family": "Chico Caballero",
+          "name": "L Chico Caballero",
+          "self": false
+        },
+        {
+          "given": "E",
+          "family": "Guillén García",
+          "name": "E Guillén García",
+          "self": false
+        },
+        {
+          "given": "M N",
+          "family": "Plasencia Martínez",
+          "name": "M N Plasencia Martínez",
+          "self": false
+        },
+        {
+          "given": "S",
+          "family": "Martínez Romero",
+          "name": "S Martínez Romero",
+          "self": false
+        },
+        {
+          "given": "J",
+          "family": "García Molina",
+          "name": "J García Molina",
+          "self": false
+        },
+        {
+          "given": "J M",
+          "family": "García Santos",
+          "name": "J M García Santos",
+          "self": false
+        }
+      ],
+      "year": 2024,
+      "sort_date": "2024-04",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "67",
+      "issue": "3",
+      "pages": "273–286",
+      "topics": [
+        "Medical AI",
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.1016/j.rxeng.2025.01.001",
+        "https://pubmed.ncbi.nlm.nih.gov/40412841/",
+        "https://api.crossref.org/works/10.1016/j.rx.2024.01.007",
+        "https://orcid.org/0009-0001-6672-2714"
+      ],
+      "note": "First published in Spanish in 2024; the English edition appeared in 2025. Both DOI records refer to the same study and are counted once.",
+      "citation_year": 2025
+    },
+    {
+      "doi": "10.1007/s00330-023-09892-7",
+      "doi_aliases": [],
+      "pmid": "37439938",
+      "title": "MR dynamic-susceptibility-contrast perfusion metrics in the presurgical discrimination of adult solitary intra-axial cerebellar tumors",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Albert",
+          "family": "Pons-Escoda",
+          "name": "Albert Pons-Escoda",
+          "self": false
+        },
+        {
+          "given": "Alonso",
+          "family": "Garcia-Ruiz",
+          "name": "Alonso Garcia-Ruiz",
+          "self": false
+        },
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "Ruben",
+          "family": "Gil-Solsona",
+          "name": "Ruben Gil-Solsona",
+          "self": false
+        },
+        {
+          "given": "Pablo",
+          "family": "Naval-Baudin",
+          "name": "Pablo Naval-Baudin",
+          "self": false
+        },
+        {
+          "given": "Teodoro",
+          "family": "Martin-Noguerol",
+          "name": "Teodoro Martin-Noguerol",
+          "self": false
+        },
+        {
+          "given": "Alejandro",
+          "family": "Fernandez-Coello",
+          "name": "Alejandro Fernandez-Coello",
+          "self": false
+        },
+        {
+          "given": "Susanie",
+          "family": "Flores-Casaperalta",
+          "name": "Susanie Flores-Casaperalta",
+          "self": false
+        },
+        {
+          "given": "Montserrat",
+          "family": "Fernandez-Viñas",
+          "name": "Montserrat Fernandez-Viñas",
+          "self": false
+        },
+        {
+          "given": "Pablo",
+          "family": "Gago-Ferrero",
+          "name": "Pablo Gago-Ferrero",
+          "self": false
+        },
+        {
+          "given": "Laura",
+          "family": "Oleaga",
+          "name": "Laura Oleaga",
+          "self": false
+        },
+        {
+          "given": "Raquel",
+          "family": "Perez-Lopez",
+          "name": "Raquel Perez-Lopez",
+          "self": false
+        },
+        {
+          "given": "Carles",
+          "family": "Majos",
+          "name": "Carles Majos",
+          "self": false
+        }
+      ],
+      "year": 2023,
+      "sort_date": "2023-07-13",
+      "category": "journal_article",
+      "first_author": false,
+      "sole_author": false,
+      "volume": "33",
+      "issue": "12",
+      "pages": "9120–9129",
+      "topics": [
+        "Neuroimaging",
+        "Clinical imaging"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-023-09892-7",
+        "https://pubmed.ncbi.nlm.nih.gov/37439938/",
+        "https://api.crossref.org/works/10.1007/s00330-023-09892-7"
+      ]
+    }
+  ]
+}
