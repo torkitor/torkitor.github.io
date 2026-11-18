@@ -1,7 +1,51 @@
 {
-  "updated": "2026-11-12",
-  "scope": "26 unique published journal works, including research articles, letters, perspectives, a review and a case report. Spanish and English editions are grouped as single works; preprint versions and conference abstracts are excluded. Publication years follow first public availability rather than later issue assignment. Bibliographic records checked against PubMed, ORCID and publisher-deposited Crossref metadata.",
+  "updated": "2026-11-18",
+  "scope": "27 unique published journal works, including research articles, letters, perspectives, a review and a case report. Spanish and English editions are grouped as single works; preprint versions and conference abstracts are excluded. Publication years follow first public availability rather than later issue assignment. Bibliographic records checked against PubMed, ORCID and publisher-deposited Crossref metadata.",
   "works": [
+    {
+      "doi": "10.1007/s00261-026-05884-5",
+      "doi_aliases": [],
+      "pmid": null,
+      "title": "Detection versus grading on prostate MRI: a multi-cohort study of diffusion, perfusion and implications for biparametric protocols",
+      "journal": "Abdominal Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        },
+        {
+          "given": "José Antonio",
+          "family": "Consentino Hernández",
+          "name": "José Antonio Consentino Hernández",
+          "self": false
+        },
+        {
+          "given": "José Vicente",
+          "family": "Cayuela Espí",
+          "name": "José Vicente Cayuela Espí",
+          "self": false
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-11-17",
+      "category": "journal_article",
+      "first_author": true,
+      "sole_author": false,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Clinical imaging",
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00261-026-05884-5",
+        "https://link.springer.com/article/10.1007/s00261-026-05884-5",
+        "https://api.crossref.org/works/10.1007/s00261-026-05884-5"
+      ]
+    },
     {
       "doi": "10.2196/106199",
       "doi_aliases": [],
