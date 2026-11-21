@@ -1,7 +1,39 @@
 {
-  "updated": "2026-11-18",
-  "scope": "27 unique published journal works, including research articles, letters, perspectives, a review and a case report. Spanish and English editions are grouped as single works; preprint versions and conference abstracts are excluded. Publication years follow first public availability rather than later issue assignment. Bibliographic records checked against PubMed, ORCID and publisher-deposited Crossref metadata.",
+  "updated": "2026-11-21",
+  "scope": "28 unique published journal works, including research articles, letters, perspectives, a review and a case report. Spanish and English editions are grouped as single works; preprint versions and conference abstracts are excluded. Publication years follow first public availability rather than later issue assignment. Bibliographic records checked against PubMed, ORCID and publisher-deposited Crossref metadata.",
   "works": [
+    {
+      "doi": "10.1007/s00330-026-13097-z",
+      "doi_aliases": [],
+      "pmid": "43055781",
+      "title": "Letter to the Editor: When prediction is not enough—decision strategies before decision curves in radiomics",
+      "journal": "European Radiology",
+      "authors": [
+        {
+          "given": "Clemente",
+          "family": "García-Hidalgo",
+          "name": "Clemente García-Hidalgo",
+          "self": true
+        }
+      ],
+      "year": 2026,
+      "sort_date": "2026-11-19",
+      "category": "letter",
+      "first_author": true,
+      "sole_author": true,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "topics": [
+        "Radiomics & methods"
+      ],
+      "sources": [
+        "https://doi.org/10.1007/s00330-026-13097-z",
+        "https://link.springer.com/article/10.1007/s00330-026-13097-z",
+        "https://pubmed.ncbi.nlm.nih.gov/43055781/",
+        "https://api.crossref.org/works/10.1007/s00330-026-13097-z"
+      ]
+    },
     {
       "doi": "10.1007/s00261-026-05884-5",
       "doi_aliases": [],
